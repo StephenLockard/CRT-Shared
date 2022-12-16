@@ -13,13 +13,13 @@ Simple End To End Flow
     [Tags]             E2E                         Lead Generation
 
     GoTo               https://www.copado.com/robotic-testing
-    ClickText          TALK TO SALES     
-              
+    ClickText          TALK TO SALES
+
     #Same button with class based and relative XPath
     # ClickElement     //*[contains(@class, "nav_btn w-button")]               #Gracious Comment
     # ClickElement     /html/body/div[2]/div/header/div[1]/div[2]/nav/ul/li[5]
 
-    TypeText           First Name*                 Marty    
+    TypeText           First Name*                 Marty
     TypeText           Last Name*                  McFly
     TypeText           Business Email*             delorean88@copado.com
     TypeText           Phone*                      1234567890
@@ -29,7 +29,7 @@ Simple End To End Flow
     DropDown           Country                     Netherlands
     Home
     LaunchApp          Sales
-    ClickText          Leads
+    ClickUntil         Send List Email                 Leads
     VerifyText         Marty McFly
     ClickText          Marty McFly
     ClickText          Details
@@ -107,4 +107,4 @@ Create a lead and account, convert a lead to an opportunity.
 
 Expected failure to demo self healing
     GoTo               https://www.copado.com/robotic-testing
-    VerifyText         SPEAK TO SALES     timeout=1
+    VerifyText         SPEAK TO SALES              timeout=1
