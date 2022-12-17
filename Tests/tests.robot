@@ -81,3 +81,6 @@ Working with Date Formats
     ${timestamp}=               Convert Date                ${now}                      result_format=%b %d, %Y
     ${timestamp}=               Convert Date                ${now}                      result_format=%d %b %Y %I:%M %p
 
+*** Keywords *** ***
+Example Keyword
+    Log To Console              The example keyword ran succesfully
