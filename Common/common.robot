@@ -3,6 +3,7 @@ Library                         QForce
 Library                         QWeb
 Library                         String
 Library                         DateTime
+Library                         Collections
 
 
 *** Variables ***
