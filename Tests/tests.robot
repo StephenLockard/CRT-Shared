@@ -63,7 +63,6 @@ Data Cleanup
     ClickText          Delete
     ClickText          Delete                      anchor=Cancel
     ClickText          Relationships               partial_match=false
-    VerifyNoText       Robots, LLC
 
 
 
