@@ -15,7 +15,7 @@ Each of these branches is set up as a test suite and runnable out of the box.
 To do so, sign in with your CRT credentials and go to [this project](https://robotic.copado.com/robots/25489/dashboard).
 
 
-For more information please reach out to @StephenLockard on Slack or visit the  [CRT Resource Hub](https://docs.google.com/spreadsheets/d/1A1yALrnJx08qhN_QBDE9IvQvlujun6NyLI9v61Hoark/edit#gid=0)
+For more information please reach out to a member of the CRT SE team on Slack or visit the  [CRT Resource Hub](https://docs.google.com/spreadsheets/d/1A1yALrnJx08qhN_QBDE9IvQvlujun6NyLI9v61Hoark/edit#gid=0)
 
 ## Contributing
 
