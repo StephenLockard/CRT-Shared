@@ -38,7 +38,7 @@ Add Loan Product to New Relationship
     VerifyText         To the Moon                 anchor=Loan
     VerifyStage        Qualification
 
-Edit and Verify Loan Information 
+Edit \& Verify Loan Information 
     ClickText          Loan Information
     DropDown           Loan Type                   Small business
     TypeText           Loan Amount                 1000000
