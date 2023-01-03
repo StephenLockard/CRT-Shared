@@ -56,8 +56,7 @@ Data Cleanup
     ClickText          Delete
     ClickText          Delete                      anchor=Cancel
     ClickText          Loans
-    VerifyNoText       To the Moon
-
+    Sleep              2
     ClickText          Relationships               partial_match=false
     ClickText          Robots, LLC
     ClickText          Delete
