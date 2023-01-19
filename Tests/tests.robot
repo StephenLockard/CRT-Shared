@@ -107,6 +107,7 @@ Create a lead and account, convert a lead to an opportunity.
 
 Expected failure to demo self healing
     GoTo                        https://www.copado.com/robotic-testing
+    LogScreenshot
     Run Keyword And Expect Error
     ...                         QWebElementNotFoundError: Unable to find element for locator SPEAK TO SALES in 1.0 sec
     ...                         VerifyText                  SPEAK TO SALES              timeout=1
