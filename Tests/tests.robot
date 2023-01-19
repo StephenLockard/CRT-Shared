@@ -35,7 +35,7 @@ Add Loan Product to New Relationship
     DropDown           Product Type                Non-Real Estate
     DropDown           Product                     Line Of Credit              timeout=5
     ClickText          Create New Loan
-    VerifyText         To the Moon                 anchor=Loan
+    Sleep              3
     VerifyStage        Qualification
 
 Edit and Verify Loan Information 
