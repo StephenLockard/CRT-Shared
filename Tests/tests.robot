@@ -35,7 +35,7 @@ Add Loan Product to New Relationship
     DropDown           Product Type                Non-Real Estate
     DropDown           Product                     Line Of Credit              timeout=5
     ClickText          Create New Loan
-    Sleep              3
+    Sleep              5
     VerifyStage        Qualification
 
 Edit and Verify Loan Information 
@@ -48,6 +48,7 @@ Edit and Verify Loan Information
     VerifyText         Open                        anchor=Status
     VerifyText         $1,000,000.00               anchor=Loan Amount
     ClickText          Mark Stage as Complete
+    Sleep              5
     VerifyStage        Proposal
 
 Data Cleanup 
