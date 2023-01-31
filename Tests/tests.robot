@@ -6,7 +6,6 @@ Suite Teardown                  End suite
 
 *** Test Cases ***
 Fresh Start
-    #Comment
     Cleanup
 Simple End To End Flow
     [Documentation]             This is an end to end test of a customer-facing lead generating form, and Salesforce.
