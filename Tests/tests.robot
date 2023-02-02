@@ -61,6 +61,7 @@ Data Cleanup
     ClickText          Relationships               partial_match=false
     ClickText          Robots, LLC
     ClickText          Delete
+    Sleep              2
     ClickText          Delete                      anchor=Cancel
     ClickText          Relationships               partial_match=false
 
