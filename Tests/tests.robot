@@ -65,6 +65,8 @@ Data Cleanup
     Sleep              4
     ClickText          Delete                      anchor=Cancel
     ClickText          Relationships               partial_match=false
+    UseModal           Off
+
 
 
 
