@@ -105,7 +105,7 @@ Create a lead and account, convert a lead to an opportunity.
     RunBlock                    VerifyNoAccounts            timeout=180s                exp_handler=DeleteData
 
 
-Expected failure to demo self healing
+Expected failure
     GoTo                        https://www.copado.com/robotic-testing
     LogScreenshot
     Run Keyword And Expect Error
