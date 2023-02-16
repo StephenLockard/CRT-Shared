@@ -37,10 +37,10 @@ Simple End To End Flow
     VerifyField                 Company                     Copado
     VerifyText                  No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
-Recorded Test
+Salesforce Guidance
     [Documentation]             Here we turn on the recorder at the top of the editor, and demo how easy it is to use.    First, visit the copado website. Then, click the "GET A DEMO" button and fill out the form.    Finally, copy the recorded steps from the execution trace (bottom left panel) below
     [Tags]                      E2E                         Lead Generation             Recorded
-    GoTo                        https://copado.com
+    Home
 
 Create a lead and account, convert a lead to an opportunity. 
     [Documentation]             This is an example of entering and converting a lead.
