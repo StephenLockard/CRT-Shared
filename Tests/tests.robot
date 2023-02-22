@@ -4,10 +4,12 @@ Resource               settings.robot
 Suite Setup            Setup Browser
 Suite Teardown         End suite
 
+
 *** Test Cases ***
 Create New Relationship
     [Documentation]    In this test a new relationshop is created and verified
     [tags]             Relationship                Regression
+    SetConfig                   DefaultTimeout              60s  
     Login
     ClickText          Relationships
     ClickText          New
