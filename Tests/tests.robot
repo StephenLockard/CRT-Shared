@@ -12,6 +12,7 @@ Create New Relationship
     SetConfig                   DefaultTimeout              60s  
     Login
     ClickText          Relationships
+    Sleep              4
     ClickText          New
     VerifyText         New Relationship
     ClickText          Individual
