@@ -46,6 +46,7 @@ Home
     End suite
     Setup Browser
     GoTo                        ${homeUrl}
+    VerifyText                  Forgot Your Password?
     ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                 2
     Run Keyword If              ${login_status}             Login
     VerifyText                  Home
@@ -69,3 +70,5 @@ MFA Login
         TypeSecret              Code                        ${mfa_code}
         ClickText               Verify
     END
+
+#TODO: Add Login As
