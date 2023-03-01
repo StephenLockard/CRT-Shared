@@ -14,8 +14,9 @@ Simple End To End Flow
 
     GoTo                        https://www.copado.com/robotic-testing
     ClickText                   TALK TO SALES
-
-    #Same button with class based and relative XPath
+    
+    #Here we target the "TALK TO SALES" button by attribute or relative XPath. This is how Selenium users and our competitors will target elements. 
+    #Three major pitfalls: Hard to read, hard to write, very brittle (heavy maintenance requirement)
     # ClickElement              //*[contains(@class, "nav_btn w-button")]               #Gracious Comment
     # ClickElement              /html/body/div[2]/div/header/div[1]/div[2]/nav/ul/li[5]
 
@@ -37,23 +38,24 @@ Simple End To End Flow
     VerifyField                 Company                     Copado
     VerifyText                  No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
-Salesforce Guidance
-    [Documentation]             Here we turn on the recorder at the top of the editor, and demo how easy it is to use.    First, visit the copado website. Then, click the "GET A DEMO" button and fill out the form.    Finally, copy the recorded steps from the execution trace (bottom left panel) below
-    [Tags]                      E2E                         Lead Generation             Recorded
+Recorder and Salesforce Guidance
+    [Documentation]             Demo how easy it is to automate with the recorder by turning it on and creating a new lead in Salesforce.
+    ...                         Next, delete the recorded automation, open the QWord Pallette to demonstrate filling in a new lead with Salesforce Guidance
+    [Tags]                      E2E                         Lead Generation             Recorded                    Salesforce Guidance
     Home
 
 Create a lead and account, convert a lead to an opportunity. 
     [Documentation]             This is an example of entering and converting a lead.
-    [tags]                      Lead                        TE-0000001
+    [tags]                      Lead       Account    Opportunity                 
 
     #Verify we are home, and begin entering a new lead.
     Home
     LaunchApp                   Sales
-    ClickText                   Leads
+    ClickUntil                  Recently Viewed                   Leads
     ClickText                   New
 
-    #Fill out form and perform data validations by attempting to save an incomplete form.
-    UseModal                    On                          #The UseModal keyword allows us to easily target only the elements on the currently active modal, and not the entire DOM structure.
+    #Verify data validation by attempting to save an incomplete form
+    UseModal                    On                          #The UseModal keyword allows us to easily target only the elements on the currently active modal. 
     VerifyText                  New Lead
     Picklist                    Salutation                  Mr.
     TypeText                    First Name                  ${first}
@@ -105,12 +107,12 @@ Create a lead and account, convert a lead to an opportunity.
     RunBlock                    VerifyNoAccounts            timeout=180s                exp_handler=DeleteData
 
 
-Expected failure
+Expected failure and Self Healing
     GoTo                        https://www.copado.com/robotic-testing
     LogScreenshot
     Run Keyword And Expect Error
     ...                         QWebElementNotFoundError: Unable to find element for locator SPEAK TO SALES in 1.0 sec
     ...                         VerifyText                  SPEAK TO SALES              timeout=1
-    
-    #To demonstrate Self Healing uncomment and run the line below. 
-    #VerifyText                  SPEAK TO SALES              timeout=1
+
+    #To demonstrate Self Healing uncomment and run the line below.
+    #VerifyText                 SPEAK TO SALES              timeout=1
