@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation           Ensure that a mobile user can submit a request for a demo at https://copado.com
-Library                 QWeb
+Resource    ../Common/common.robot
 Suite Setup             Open Browser                about:blank                 chrome
 Suite Teardown          Close All Browsers
 
@@ -22,16 +22,21 @@ Mobile Browser Test with ${device}
     VerifyText            Talk to Sales
     ClickText             Talk to Sales
 
-    TypeText           First Name*                 Moby    
-    TypeText           Last Name*                  Mobilerson
-    TypeText           Business Email*             MobinTime@copado.com
+    TypeText           First Name*                 Marty    
+    TypeText           Last Name*                  McFly
+    TypeText           Business Email*             SavingTime@copado.com
     TypeText           Phone*                      1234567890
     TypeText           Company*                    Copado
     DropDown           Employee Size*              1-2,500
     TypeText           Job Title*                  Sales Engineer
     DropDown           Country                     Finland
     
-    GoTo               ${}
+    Login
+    HoverText          Leads
+    ClickText          Leads
+    VerifyText         McFly, Marty
+    ClickText          Mcfly, Marty
+    VerifyText         Working - Contacted
   
 *** Variables ***    
 ${device}    Samsung Galaxy S20 Ultra
