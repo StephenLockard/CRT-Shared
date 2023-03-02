@@ -1,18 +1,13 @@
-*** Test Cases ***
-    
 *** Settings ***
-Library    QWeb
-Library    DataDriver    reader_class=TestDataApi    name=mobileDeviceList.xlsx
-
-Suite Setup       Open Browser        about:blank     Chrome
-Suite Teardown    Close All Browsers
+Documentation           Ensure that a mobile user can submit a request for a demo at https://copado.com
+Suite Setup             Open Browser                about:blank                 chrome
+Suite Teardown          Close All Browsers
 Test Template     Example Test
-
 *** Test Case ***
 Mobile Browser Test with ${device}
 
 *** Keywords ***
-Example Test
+Mobile Browser Test
     [Arguments]    ${device}
     Close All Browsers
     OpenBrowser    http://google.com     chrome    emulation=${device}
@@ -32,5 +27,6 @@ Example Test
     DropDown           Employee Size*              1-2,500
     TypeText           Job Title*                  Sales Engineer
     DropDown           Country                     Finland
+    Sleep              2
 
   
