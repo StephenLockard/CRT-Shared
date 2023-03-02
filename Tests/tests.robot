@@ -1,14 +1,15 @@
 *** Settings ***
 Documentation           Ensure that a mobile user can submit a request for a demo at https://copado.com
+Library    settings.robot
 Suite Setup             Open Browser                about:blank                 chrome
 Suite Teardown          Close All Browsers
 Test Template     Example Test
+
+
+
+
 *** Test Case ***
 Mobile Browser Test with ${device}
-
-*** Keywords ***
-Mobile Browser Test
-    [Arguments]    ${device}
     Close All Browsers
     OpenBrowser    http://google.com     chrome    emulation=${device}
     TypeText    Search    Copado Robotic Testing\n
@@ -19,6 +20,7 @@ Mobile Browser Test
     ScrollTo     WATCH A DEMO
     VerifyText            Talk to Sales
     ClickText             Talk to Sales
+
     TypeText           First Name*                 Moby    
     TypeText           Last Name*                  Mobilerson
     TypeText           Business Email*             MobinTime@copado.com
@@ -27,6 +29,6 @@ Mobile Browser Test
     DropDown           Employee Size*              1-2,500
     TypeText           Job Title*                  Sales Engineer
     DropDown           Country                     Finland
-    Sleep              2
-
   
+*** Variables ***    
+${device}    Samsung Galaxy S20+
