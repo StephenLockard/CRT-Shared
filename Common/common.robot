@@ -43,8 +43,6 @@ Setup
 
 Home
     [Documentation]             Navigate to homepage, login if needed
-    End suite
-    Setup Browser
     GoTo                        ${homeUrl}
     VerifyText                  Forgot Your Password?
     ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                 2
