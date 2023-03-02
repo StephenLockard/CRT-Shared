@@ -32,4 +32,4 @@ Mobile Browser Test with ${device}
     DropDown           Country                     Finland
   
 *** Variables ***    
-${device}    Samsung Galaxy S20+
+${device}    Samsung Galaxy S20 Ultra
