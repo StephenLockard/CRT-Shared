@@ -10,7 +10,7 @@ Suite Teardown            Close All Browsers
 
 
 *** Test Cases ***
-Mobile Browser Test with ${device}
+Mobile Browser Test with Samsung Galaxy S20 Ultra
     Close All Browsers
     OpenBrowser           http://google.com         chrome                      emulation=Samsung Galaxy S20 Ultra
     TypeText              Search                    Copado Robotic Testing\n
