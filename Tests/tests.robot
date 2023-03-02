@@ -30,6 +30,8 @@ Mobile Browser Test with ${device}
     DropDown           Employee Size*              1-2,500
     TypeText           Job Title*                  Sales Engineer
     DropDown           Country                     Finland
+    
+    GoTo               ${}
   
 *** Variables ***    
 ${device}    Samsung Galaxy S20 Ultra
