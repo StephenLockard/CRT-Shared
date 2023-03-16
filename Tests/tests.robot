@@ -115,4 +115,4 @@ Expected failure and Self Healing
     ...                         VerifyText                  SPEAK TO SALES              timeout=1
 
     #To demonstrate Self Healing uncomment and run the line below.
-    #VerifyText                 SPEAK TO SALES              timeout=1
+    #VerifyText                 SPEAK TO SALES              timeout=2
