@@ -71,7 +71,7 @@ Mathematical Expressions
     ${net_price_formatted}=     Format String               {:,}                        ${net_price}
     Should Be Equal             ${currency} ${net_price_formatted}                      USD 80,000
 
-    #Calculate net margin %; verify accuracy of CPQ field
+    #Calculate net margin %; verify accuracy
     ${net_margin}=              Evaluate                    ((${net_price}-${total_cost})/${list_price})*100
     Should Be Equal As Numbers                              ${net_margin}               75
 
