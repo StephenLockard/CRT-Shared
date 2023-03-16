@@ -116,5 +116,3 @@ Expected failure and Self Healing
 
     #To demonstrate Self Healing uncomment and run the line below.
     #VerifyText                 SPEAK TO SALES              timeout=1
-
-    #Example Change
