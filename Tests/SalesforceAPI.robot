@@ -2,7 +2,8 @@
 
 Documentation           Example on how to use QForce REST API keywords
 Library                 QForce
-Resource                ../resources/common.resource
+Resource                        ../Common/common.robot
+Resource                        settings.robot
 Suite Setup             Setup Browser
 Suite Teardown          End Suite
 
