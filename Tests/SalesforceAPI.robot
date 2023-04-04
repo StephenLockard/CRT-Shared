@@ -26,7 +26,7 @@ Create Account and Contact via REST API
     # For authentication a client_id and client secret from a Connected oauth app are needed
     # in addition to test user's credentials     
     # --------------------------------------------------------------------------------------           
-    Authenticate                ${client_id}                ${client_secret}    ${username}           ${password}     sandbox=True 
+    Authenticate                ${consumer_key}                ${consumer_secret}    ${username}           ${password}     sandbox=True 
   
     # --------------------------NOTE-------------------------------------------------------- 
     # For creating data, just use keyword "Create Record" with data type you want to 
