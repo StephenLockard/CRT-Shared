@@ -21,7 +21,6 @@ Working with Date Formats
 First day of next month
     ${firstDayNextMonth}=    First day of next month
 
-
 *** Keywords ***
 
 First day of next month
