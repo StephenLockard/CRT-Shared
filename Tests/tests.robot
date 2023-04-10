@@ -75,11 +75,7 @@ Mathematical Expressions
     ${net_margin}=              Evaluate                    ((${net_price}-${total_cost})/${list_price})*100
     Should Be Equal As Numbers                              ${net_margin}               75
 
-Working with Date Formats
-    ${now}=                     Get Current Date
 
-    ${timestamp}=               Convert Date                ${now}                      result_format=%b %d, %Y
-    ${timestamp}=               Convert Date                ${now}                      result_format=%d %b %Y %I:%M %p
 
 *** Keywords *** ***
 Example Keyword
