@@ -74,3 +74,7 @@ Mathematical Expressions
     #Calculate net margin %; verify accuracy
     ${net_margin}=              Evaluate                    ((${net_price}-${total_cost})/${list_price})*100
     Should Be Equal As Numbers                              ${net_margin}               75
+
+*** Keywords ***                       
+Example Keyword 
+    Log    This is an example keyword
