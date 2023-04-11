@@ -22,7 +22,6 @@ First day of next month
     ${firstDayNextMonth}=    First day of next month
 
 *** Keywords ***
-
 First day of next month
     Check Date
     Set Suite Variable       ${firstDayNextMonth}        ${nextMonth}/01/${correctYear}
