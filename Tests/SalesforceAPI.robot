@@ -86,7 +86,7 @@ Verify from UI
     VerifyText                  Jana Doe
     ClickText                   Jana Doe
 
-    ClickText                   Details
+    ClickText                   Details    timeout=60
     VerifyField                 Name                     Jana Doe
     VerifyField                 Email                    jana.doe@fake.com
     VerifyField                 Account Name             TestCorp123    tag=a
