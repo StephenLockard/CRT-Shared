@@ -15,4 +15,4 @@ Verify Boat Color
     Sleep         2  # make sure new boat image is loaded
     ${boat2}=     CaptureIcon                 //img[@alt\="boat-color"] 
 
-    CompareImages     ${boat1}       ${boat2}   tolerance=0.99  
+    Run Keyword And Expect Error              QImageException: The difference between the images exceeds the acceptable limit.              CompareImages     ${boat1}       ${boat2}   tolerance=0.99  
