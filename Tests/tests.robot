@@ -25,7 +25,6 @@ Simple End To End Flow
     TypeText                    Business Email*             delorean88@copado.com
     TypeText                    Phone*                      1234567890
     TypeText                    Company*                    Copado
-    DropDown                    Employee Size*              1-2,500
     TypeText                    Job Title*                  Sales Engineer
     DropDown                    Country                     Netherlands
     Home
