@@ -27,7 +27,6 @@ Mobile Browser Test with Samsung Galaxy S20 Ultra
     TypeText              Business Email*           SavingTime@copado.com
     TypeText              Phone*                    1234567890
     TypeText              Company*                  Copado
-    DropDown              Employee Size*            1-2,500
     TypeText              Job Title*                Sales Engineer
     DropDown              Country                   Finland
 
@@ -54,7 +53,6 @@ Mobile Browser Test with Samsung Galaxy S8+
     TypeText              Business Email*           SavingTime@copado.com
     TypeText              Phone*                    1234567890
     TypeText              Company*                  Copado
-    DropDown              Employee Size*            1-2,500
     TypeText              Job Title*                Sales Engineer
     DropDown              Country                   Finland
 
@@ -81,7 +79,6 @@ Mobile Browser Test with iPhone 12 Pro
     TypeText              Business Email*           SavingTime@copado.com
     TypeText              Phone*                    1234567890
     TypeText              Company*                  Copado
-    DropDown              Employee Size*            1-2,500
     TypeText              Job Title*                Sales Engineer
     DropDown              Country                   Finland
 
@@ -109,7 +106,6 @@ Mobile Browser Test with iPhone SE
     TypeText              Business Email*           SavingTime@copado.com
     TypeText              Phone*                    1234567890
     TypeText              Company*                  Copado
-    DropDown              Employee Size*            1-2,500
     TypeText              Job Title*                Sales Engineer
     DropDown              Country                   Finland
 
@@ -137,7 +133,6 @@ Mobile Browser Test with iPhone XR
     TypeText              Business Email*           SavingTime@copado.com
     TypeText              Phone*                    1234567890
     TypeText              Company*                  Copado
-    DropDown              Employee Size*            1-2,500
     TypeText              Job Title*                Sales Engineer
     DropDown              Country                   Finland
 
@@ -165,7 +160,6 @@ Mobile Browser Test with iPad Air
     TypeText              Business Email*           SavingTime@copado.com
     TypeText              Phone*                    1234567890
     TypeText              Company*                  Copado
-    DropDown              Employee Size*            1-2,500
     TypeText              Job Title*                Sales Engineer
     DropDown              Country                   Finland
 
@@ -192,7 +186,6 @@ Mobile Browser Test with Pixel 5
     TypeText              Business Email*           SavingTime@copado.com
     TypeText              Phone*                    1234567890
     TypeText              Company*                  Copado
-    DropDown              Employee Size*            1-2,500
     TypeText              Job Title*                Sales Engineer
     DropDown              Country                   Finland
 
