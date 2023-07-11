@@ -12,8 +12,7 @@ Suite Teardown            Close All Browsers
 
 *** Test Cases ***
 Mobile Browser Test with ${device}
-    [Documentation]             Ensure that a mobile user can submit a request for a demo at https://copado.com
-    [Tags]                      Mobile     Browser Emulation    Data Driven
+    
     
 
 *** Keywords ***
