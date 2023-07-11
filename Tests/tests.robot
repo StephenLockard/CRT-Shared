@@ -4,6 +4,7 @@ Resource                     ../Common/common.robot
 Resource                     settings.robot
 Suite Setup                  Open Browser              about:blank                 chrome
 Suite Teardown               Close All Browsers
+Test Template    Mobile Browser Test
 
 
 
