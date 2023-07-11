@@ -197,9 +197,4 @@ Mobile Browser Test with Pixel 5
     ClickText             Mcfly, Marty
     VerifyText            Working - Contacted
 
-*** Keywords ***
-Handle Cookies Prompt
-    ${cookiesPrompt}=     IsText                    Before you continue to Google
-    IF    ${cookiesPrompt}
-        ClickText         Accept all
-    END
+
