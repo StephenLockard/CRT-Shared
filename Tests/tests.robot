@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation             Ensure that a mobile user can submit a request for a demo at https://copado.com
 Resource                  ../Common/common.robot
+Resource                  settings.robot
 Suite Setup               Open Browser              about:blank                 chrome
 Suite Teardown            Close All Browsers
 
@@ -10,9 +11,9 @@ Suite Teardown            Close All Browsers
 
 
 *** Test Cases ***
-Mobile Browser Test with Samsung Galaxy S20 Ultra
+Mobile Browser Test with ${device}
     Close All Browsers
-    OpenBrowser           http://google.com         chrome                      emulation=Samsung Galaxy S20 Ultra
+    OpenBrowser           http://google.com         chrome                      emulation=${device}
     Handle Cookies Prompt
     TypeText              Search                    Copado Robotic Testing\n
     ClickText             https://www.copado.com
