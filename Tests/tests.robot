@@ -13,6 +13,7 @@ Suite Teardown            Close All Browsers
 Mobile Browser Test with Samsung Galaxy S20 Ultra
     Close All Browsers
     OpenBrowser           http://google.com         chrome                      emulation=Samsung Galaxy S20 Ultra
+    Handle Cookies Prompt
     TypeText              Search                    Copado Robotic Testing\n
     ClickText             https://www.copado.com
 
@@ -196,4 +197,9 @@ Mobile Browser Test with Pixel 5
     ClickText             Mcfly, Marty
     VerifyText            Working - Contacted
 
-    
+*** Keywords ***
+Handle Cookies Prompt
+    ${cookiesPrompt}=     IsText                    Before you continue to Google
+    IF    ${cookiesPrompt}
+        ClickText         Accept all
+    END
