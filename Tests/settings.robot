@@ -1,6 +1,6 @@
 *** Settings ***
 *** Variables ***
-${device}=    Samsung Galaxy S20 Ultra
+${device}    Samsung Galaxy S20 Ultra
 *** Keywords ***
 Handle Cookies Prompt
     ${cookiesPrompt}=     IsText                    Before you continue to Google
