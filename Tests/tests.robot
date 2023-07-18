@@ -44,4 +44,4 @@ Mobile Browser Test
     ClickText                Leads
     VerifyText               McFly, Marty
     ClickText                Mcfly, Marty
-    VerifyText               Open - Contacted
+    VerifyText               Open - Not Contacted
