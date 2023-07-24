@@ -1,104 +1,105 @@
 *** Settings ***
-Resource                 ../resources/common.robot
-Suite Setup              Setup Browser
-Suite Teardown           End suite
+Library                         FakerLibrary
+Resource                        ../resources/common.robot
+Suite Setup                     Setup Browser
+Suite Teardown                  End suite
 
-#Keywords found here:  https://guykisel.github.io/robotframework-faker/
+#Keywords found here:           https://guykisel.github.io/robotframework-faker/
+*** Variables ***
+@{users}                        Create List                 Guest                 Sales    Admin    Father    Mother    Child    Daughter    Son    Cousin    Uncle    Aunt
 
 *** Test Cases ***
-
-
 FakerLibrary Words Generation
-    ${words}=    FakerLibrary.Words
-    Log    words: ${words}
-    ${words}=    FakerLibrary.Words    nb=${10}
-    Log    words: ${words}
+    ${words}=                   FakerLibrary.Words
+    Log                         words: ${words}
+    ${words}=                   FakerLibrary.Words          nb=${10}
+    Log                         words: ${words}
 
 user_profile
-    ${address} =  FakerLibrary.address
-    ${country} =  FakerLibrary.country
-    ${email} =  FakerLibrary.email
-    ${first_name} =  FakerLibrary.first_name
-    ${last_name} =  FakerLibrary.last_name
-    ${phone_number} =  FakerLibrary.phone_number
-    ${profile} =  catenate
-    ...             ${\n}=======================================
-    ...             ${\n}first_name: ${first_name}
-    ...             ${\n}last_name: ${last_name}
-    ...             ${\n}address: ${address}
-    ...             ${\n}country: ${country}
-    ...             ${\n}email: ${email}
-    ...             ${\n}phone_number: ${phone_number}
-    ...             ${\n}=======================================
-    Log             ${profile}
+    ${address} =                FakerLibrary.address
+    ${country} =                FakerLibrary.country
+    ${email} =                  FakerLibrary.email
+    ${first_name} =             FakerLibrary.first_name
+    ${last_name} =              FakerLibrary.last_name
+    ${phone_number} =           FakerLibrary.phone_number
+    ${profile} =                catenate
+    ...                         ${\n}=======================================
+    ...                         ${\n}first_name: ${first_name}
+    ...                         ${\n}last_name: ${last_name}
+    ...                         ${\n}address: ${address}
+    ...                         ${\n}country: ${country}
+    ...                         ${\n}email: ${email}
+    ...                         ${\n}phone_number: ${phone_number}
+    ...                         ${\n}=======================================
+    Log                         ${profile}
 
 openidm_user_profile
-    ${given_name} =  FakerLibrary.first_name
-    ${sn} =  FakerLibrary.last_name
-    ${user_id} =  set variable  ${given_name}${sn}
-    ${mail} =  FakerLibrary.email
-    ${phone_number} =  FakerLibrary.Numerify  +%%-%%%%-%%%%
-    ${description} =  FakerLibrary.Sentence
-    ${password} =  FakerLibrary.Password
-    ${profile} =  catenate
-    ...             ${\n}=======================================
-    ...             ${\n}given_name: ${given_name}
-    ...             ${\n}sn: ${sn}
-    ...             ${\n}user_id: ${user_id}
-    ...             ${\n}mail: ${mail}
-    ...             ${\n}phone_number: ${phone_number}
-    ...             ${\n}description: ${description}
-    ...             ${\n}password: ${password}
-    ...             ${\n}=======================================
-    Log  ${profile}
+    ${given_name} =             FakerLibrary.first_name
+    ${sn} =                     FakerLibrary.last_name
+    ${user_id} =                set variable                ${given_name}${sn}
+    ${mail} =                   FakerLibrary.email
+    ${phone_number} =           FakerLibrary.Numerify       +%%-%%%%-%%%%
+    ${description} =            FakerLibrary.Sentence
+    ${password} =               FakerLibrary.Password
+    ${profile} =                catenate
+    ...                         ${\n}=======================================
+    ...                         ${\n}given_name: ${given_name}
+    ...                         ${\n}sn: ${sn}
+    ...                         ${\n}user_id: ${user_id}
+    ...                         ${\n}mail: ${mail}
+    ...                         ${\n}phone_number: ${phone_number}
+    ...                         ${\n}description: ${description}
+    ...                         ${\n}password: ${password}
+    ...                         ${\n}=======================================
+    Log                         ${profile}
 
 misc_keywords
-    ${safe_email} =  FakerLibrary.Safe_Email
-    ${timezone} =  FakerLibrary.Timezone
-    ${url} =  FakerLibrary.url
-    ${misc} =  catenate
-    ...             ${\n}Safe Email: ${safe_email}
-    ...             ${\n}timezone: ${timezone}
-    ...             ${\n}url: ${url}
-    Log             ${misc}
+    ${safe_email} =             FakerLibrary.Safe_Email
+    ${timezone} =               FakerLibrary.Timezone
+    ${url} =                    FakerLibrary.url
+    ${misc} =                   catenate
+    ...                         ${\n}Safe Email: ${safe_email}
+    ...                         ${\n}timezone: ${timezone}
+    ...                         ${\n}url: ${url}
+    Log                         ${misc}
 
 Faker_seeding
-    FakerLibrary.Seed  ${5}
-    ${name1} =  FakerLibrary.email
-    FakerLibrary.Seed  ${5}
-    ${name2} =  FakerLibrary.email
-    Should Be Equal As Strings  ${name1}  ${name2}
+    FakerLibrary.Seed           ${5}
+    ${name1} =                  FakerLibrary.email
+    FakerLibrary.Seed           ${5}
+    ${name2} =                  FakerLibrary.email
+    Should Be Equal As Strings                              ${name1}              ${name2}
 
 browsers
-    ${chrome} =  FakerLibrary.chrome
-    ${firefox} =  FakerLibrary.firefox
-    ${internet_explorer} =  FakerLibrary.Internet_explorer
-    ${browsers} =  catenate
-    ...             ${\n}=======================================
-    ...             ${\n}${chrome}
-    ...             ${\n}${firefox}
-    ...             ${\n}${internet_explorer}
-    ...             ${\n}=======================================
-    Log             ${browsers}
+    ${chrome} =                 FakerLibrary.chrome
+    ${firefox} =                FakerLibrary.firefox
+    ${internet_explorer} =      FakerLibrary.Internet_explorer
+    ${browsers} =               catenate
+    ...                         ${\n}=======================================
+    ...                         ${\n}${chrome}
+    ...                         ${\n}${firefox}
+    ...                         ${\n}${internet_explorer}
+    ...                         ${\n}=======================================
+    Log                         ${browsers}
 
 country_locale
-    ${Language_code} =  FakerLibrary.Language_code
-    ${Locale} =  FakerLibrary.Locale
-    ${output} =  catenate
-    ...             ${\n}Language_code: ${Language_code}
-    ...             ${\n}Locale: ${Locale}
-    Log             ${output}
+    ${Language_code} =          FakerLibrary.Language_code
+    ${Locale} =                 FakerLibrary.Locale
+    ${output} =                 catenate
+    ...                         ${\n}Language_code: ${Language_code}
+    ...                         ${\n}Locale: ${Locale}
+    Log                         ${output}
 
-# generate_csv_file_for_openidm_sample4
-#     ${string} =  set variable  "firstName", "uid", "lastName", "email", "employeeNumber"${\n}
-#     :FOR  ${i}  IN RANGE  3
-#     \  ${given_name} =  FakerLibrary.first_name
-#     \  ${last_name} =  FakerLibrary.last_name
-#     \  ${uid} =  set variable  ${given_name}${last_name}
-#     \  ${email} =  FakerLibrary.email
-#     \  ${employee_number} =  FakerLibrary.Numerify  %%%%%%
-#     \  ${string} =  catenate  ${string}
-#     ...  "${given_name}", "${last_name}", "${uid}", "${email}", "${employee_number}"${\n}
-#     Log             ${string}
+    # generate_csv_file_for_openidm_sample4
+    #                           ${string} =                 set variable          "firstName", "uid", "lastName", "email", "employeeNumber"${\n}
+    #                           :FOR                        ${i}                  IN RANGE          3
+    #                           \                           ${given_name} =       FakerLibrary.first_name
+    #                           \                           ${last_name} =        FakerLibrary.last_name
+    #                           \                           ${uid} =              set variable      ${given_name}${last_name}
+    #                           \                           ${email} =            FakerLibrary.email
+    #                           \                           ${employee_number} =           FakerLibrary.Numerify        %%%%%%
+    #                           \                           ${string} =           catenate          ${string}
+    #                           ...                         "${given_name}", "${last_name}", "${uid}", "${email}", "${employee_number}"${\n}
+    #                           Log                         ${string}
     # and then you can create the file with the string:
-    # create file  /path/to/Installs/openidm/samples/sample4/data/hr.csv  ${string}
+    # create file               /path/to/Installs/openidm/samples/sample4/data/hr.csv      ${string}
