@@ -1,5 +1,5 @@
 *** Settings ***
-Library                      DataDriver                reader_class=TestDataApi    name=mobileDeviceList.xlsx
+Library                      DataDriver                reader_class=TestDataApi    name=Non_Apple_Devices.xlsx
 Resource                     ../Common/common.robot
 Resource                     settings.robot
 Suite Setup                  Open Browser              about:blank                 chrome
