@@ -8,14 +8,6 @@ Suite Setup             Setup Browser
 Suite Teardown          End Suite
 
 
-*** Variables ***
-#${username}                     # SHOULD BE GIVEN IN CRT VARIABLES SECTION
-#${login_url}                    # SHOULD BE GIVEN IN CRT VARIABLES SECTION
-#${password}                     # SHOULD BE GIVEN IN CRT SENSITIVE VARIABLES SECTION
-#${client_id}                    # SHOULD BE GIVEN IN CRT SENSITIVE VARIABLES SECTION
-#${client_secret}                # SHOULD BE GIVEN IN CRT SENSITIVE VARIABLES SECTION
-
-
 *** Test Cases ***
 Create Account and Contact via REST API
     [Documentation]             Example test case on how to create test data using REST API
