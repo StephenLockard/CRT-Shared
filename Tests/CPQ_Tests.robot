@@ -57,7 +57,7 @@ Preview & Validate PDF Document
     ClickText             Preview Document
     ClickText             Preview                     anchor=Cancel               delay=20
     Sleep                 45
-    VerifyRow             Net 30                      row_text=mkohler@copado.com
+    VerifyRow             Net 30                      row_text=slockard@copado.com
     VerifyRow             USD 120,000.00              row_text=TOTAL
     LogScreenshot
 
