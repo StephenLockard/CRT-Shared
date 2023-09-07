@@ -91,11 +91,6 @@ Delete CPQ Quote Data
     ClickText             BigQuery
     ClickText             Delete
     ClickText             Delete                      anchor=Cancel
-    VerifyText            Opportunity Product "Robotic Testing BigQuery" was deleted 
-
-    ClickText             BigQuery
-    ClickText             Delete
-    ClickText             Delete                      anchor=Cancel
     VerifyText            Opportunity Product "Robotic Testing BigQuery" was deleted
 
     ClickText             Opportunities
