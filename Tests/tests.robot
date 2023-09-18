@@ -17,8 +17,8 @@ Simple End To End Flow
     
     #Here we target the "TALK TO SALES" button by attribute or relative XPath. This is how Selenium users and our competitors will target elements. 
     #Three major pitfalls: Hard to read, hard to write, very brittle (heavy maintenance requirement)
-    ClickElement              //*[contains(@class, "secondary-btn w-button")]               #Gracious Comment
-    ClickElement              /html/body/div[2]/div/header/div[1]/div[2]/nav/ul/li[5] #Another Gracious Comment
+    # ClickElement              //*[contains(@class, "secondary-btn w-button")]               #Gracious Comment
+    # ClickElement              /html/body/div[2]/div/header/div[1]/div[2]/nav/ul/li[5] #Another Gracious Comment
 
     TypeText                    First Name*                 Marty
     TypeText                    Last Name*                  McFly
