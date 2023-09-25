@@ -1,5 +1,6 @@
 *** Settings ***
 Library                         QForce
+Library    QVision
 Library                         QWeb
 Library                         String
 Library                         DateTime
