@@ -115,3 +115,25 @@ Expected failure and Self Healing
 
     #To demonstrate Self Healing uncomment and run the line below.
     #VerifyText                 SPEAK TO SALES              timeout=5
+
+Service Console E2E
+    GoTo    https://account.proton.me/login
+    VerifyText    Email or Username
+    TypeText      Email or Username    slockardCopado@proton.me
+    TypeText      Password             ${protonPass}
+    ClickText     Sign in
+    ClickText     New message
+    TypeText      Email address        demoSupport@copado.com
+    TypeText      Subject              Password reset
+    TypeText      Sent with Proton Mail secure email    Please reset the password for my user, I forgot it and do not have access to recovery methods. 
+    #Delete draft to prevent spam, in this demo we pretend that Email to Case is being triggered.
+    ClickText     Delete draft
+    VerifyText    Are you sure you want to permanently delete this draft?
+    ClickText     Delete
+
+    Home          
+    
+Create New Service Case with Recorder
+    Home
+    
+
