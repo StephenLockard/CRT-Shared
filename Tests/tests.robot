@@ -23,6 +23,7 @@ SOQL Query and paratermize JSON response
 
 Validate Account Record Created in UI 
     Home
+    LaunchApp    Sales
     ClickText                   Accounts
     VerifyText                  ${name}
     ClickUntil                  Delete                      ${name}
