@@ -36,6 +36,9 @@ VerifyNoAccounts
 DeleteData
     [Documentation]    RunBlock to remove all data until it doesn't exist anymore
     ClickText          ${accountName}
+    
+
+    ClickText    Show more actions    anchor=Book Apopintment
     ClickText          Delete
     VerifyText         Are you sure you want to delete this account?
     ClickText          Delete                      2
