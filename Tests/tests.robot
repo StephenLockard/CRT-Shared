@@ -26,6 +26,7 @@ Validate Account Record Created in UI
     LaunchApp    Sales
     ClickText                   Accounts
     VerifyText                  ${name}
+    ClickText    Show more actions
     ClickUntil                  Delete                      ${name}
     Clicktext                   Delete
     ClickText                   Delete                      anchor=Cancel
