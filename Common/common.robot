@@ -55,7 +55,7 @@ InsertRandomValue
     ...                         It then types a random string into the given field.
     ...                         This is an example of generating dynamic data within a test
     ...                         and how to create a keyword with optional/default arguments.
-    [Arguments]                 ${field}                    ${charCount}=5              ${prefix}=                  ${suffix}=
+    [Arguments]                 ${field}                 ${prefix}=                  ${suffix}=    ${charCount}=5  
     Set Library Search Order    QWeb
     ${testRandom}=              Generate Random String      ${charCount}
     TypeText                    ${field}                    ${prefix}${testRandom}${suffix}
