@@ -29,7 +29,7 @@ Simple End To End Flow
     DropDown                    Country                     Netherlands
     Home
     LaunchApp                   Sales
-    ClickUntil                  Send List Email             Leads
+    ClickUntil                  Send List Email             Intelligence View
     VerifyText                  Marty McFly
     ClickText                   Marty McFly
     ClickText                   Details
