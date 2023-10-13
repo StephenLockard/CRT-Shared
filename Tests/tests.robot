@@ -121,8 +121,7 @@ Service Console E2E
     VerifyText    Email or Username
     TypeText      Email or Username    slockardCopado@proton.me
     TypeText      Password             ${protonPass}
-    ClickText     Sign in
-    Sleep         3
+    ClickText     Sign in              delay=5
     ClickText     New message
     TypeText      Email address        demoSupport@copado.com
     TypeText      Subject              Password reset
