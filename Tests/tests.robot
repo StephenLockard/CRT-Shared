@@ -69,7 +69,7 @@ Create a lead and account, convert a lead to an opportunity.
     UseModal                    On
     TypeText                    Company                     ${company}
     ClickText                   Save                        partial_match=false
-    VerifyText                  Mr. Demo McTest
+    VerifyText                  Demo McTest
     UseModal                    Off
 
     #Verify status updates function and select converted status
