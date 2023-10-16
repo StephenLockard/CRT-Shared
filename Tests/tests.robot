@@ -56,9 +56,10 @@ Create a lead and account, convert a lead to an opportunity.
     #Verify data validation by attempting to save an incomplete form
     UseModal                    On                          #The UseModal keyword allows us to easily target only the elements on the currently active modal. 
     VerifyText                  New Lead
-    Picklist                    Salutation                  Mr.
+    
     TypeText                    First Name                  ${first}
     TypeText                    Last Name                   ${last}
+    Picklist                    Salutation                  Mr.
     ClickText                   Save                        partial_match=false
     UseModal                    Off                         #Turn off UseModal to interact with the error notification.
     VerifyText                  We hit a snag.
