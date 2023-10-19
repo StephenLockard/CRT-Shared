@@ -33,7 +33,7 @@ Simple End To End Flow
     VerifyText                  Marty McFly
     ClickText                   Marty McFly
     ClickText                   Details
-    VerifyField                 Name                        Mr. Marty McFly
+    VerifyField                 Name                        Marty McFly
     VerifyField                 Company                     Copado
     VerifyText                  No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
