@@ -28,6 +28,7 @@ Simple End To End Flow
     TypeText                    Job Title*                  Sales Engineer
     DropDown                    Country                     Netherlands
     Home
+    LogScreenshot
     LaunchApp                   Sales
     ClickUntil                  Intelligence View           Leads
     VerifyText                  Marty McFly
