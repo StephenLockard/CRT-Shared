@@ -13,6 +13,7 @@ Update Remote Site Settings
     ClickText          Setup
     ClickText          Setup for current app
     SwitchWindow       NEW
+    Sleep              3
     TypeText           Quick Find                  Remote Site Settings
     ClickText          Remote Site Settings
     ClickText          Edit                        anchor=AA_Example
