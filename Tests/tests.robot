@@ -55,6 +55,7 @@ Update Session Settings
     TypeText           Quick Find                  session
     VerifyText         Session Settings
     ClickText          Session Settings
+    Sleep              3
     ScrollTo           Set the session security and session expiration
     ClickCheckbox      Disable session timeout warning popup                   on
     ClickCheckbox      Enforce login IP ranges on every request                on
