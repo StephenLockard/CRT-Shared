@@ -19,9 +19,10 @@ Create New Relationship
     UseModal           on
     VerifyText         New Relationship: Individual
     TypeText           Relationship Name           Robots, LLC
-    PickList           Relationship Type           Limited Liability Company
     VerifyPickList     Status                      Prospect
     ClickCheckbox      Employee Relationship       on
+    Sleep              3
+    PickList           Relationship Type           Limited Liability Company
     ClickText          Save                        partial_match=False
 
     VerifyField        Relationship Name           Robots, LLC
