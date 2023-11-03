@@ -51,6 +51,7 @@ Update Session Settings
     ClickText          Setup
     ClickText          Setup for current app
     SwitchWindow       NEW
+    Sleep              3
     TypeText           Quick Find                  session
     VerifyText         Session Settings
     ClickText          Session Settings
