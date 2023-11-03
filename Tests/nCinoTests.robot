@@ -9,7 +9,6 @@ Suite Teardown         End suite
 Create New Relationship
     [Documentation]    In this test a new relationshop is created and verified
     [tags]             Relationship                Regression
-    SetConfig                   DefaultTimeout              60s  
     nCino Login
     ClickText          Relationships
     Sleep              4
