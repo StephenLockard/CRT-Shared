@@ -17,7 +17,7 @@ Create New Relationship
     VerifyText         New Relationship
     ClickText          Individual
     ClickText          Next
-    UseModal
+    UseModal           on
     VerifyText         New Relationship: Individual
     TypeText           Relationship Name           Robots, LLC
     PickList           Relationship Type           Limited Liability Company
