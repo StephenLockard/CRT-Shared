@@ -63,13 +63,16 @@ Data Cleanup
     ClickText          Loans
     Sleep              2
     ClickText          Relationships               partial_match=false
-    ClickText          Robots, LLC
-    ClickText          Delete
-    UseModal           On
-    Sleep              4
-    ClickText          Delete                      anchor=Cancel
-    Sleep              4
-    ClickText          Delete 
+    ${robotsLLC}=      IsText                      Robots, LLC
+    IF    ${robotsLLC}
+        ClickText          Robots, LLC
+        ClickText          Delete
+        UseModal           On
+        Sleep              4
+        ClickText          Delete                      anchor=Cancel
+        Sleep              4
+        ClickText          Delete                          
+    END
     UseModal           Off
 
 
