@@ -39,8 +39,7 @@ Add Loan Product to New Relationship
     DropDown           Product Type                Non-Real Estate
     DropDown           Product                     Line Of Credit              timeout=5
     ClickText          Create New Loan
-    #Sleep              5
-    #VerifyStage        Qualification
+    VerifyStage        Qualification
 
 Edit and Verify Loan Information 
     ClickText          Loan Information
@@ -74,8 +73,14 @@ Data Cleanup
         ClickText          Delete                          
     END
     UseModal           Off
-
-
+Final Cleanup 
+    ${query} =    Catenate    SEPARATOR=NONE
+    ...    SELECT Id
+    ...    FROM nCino_Relationship_Object__c
+    ...    WHERE Name = 'Robots, LLC'
+    Log           ${query}
+    Log To Console            ${query}
+    #Delete Records    ${query}
 
 
 
