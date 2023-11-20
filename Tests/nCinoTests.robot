@@ -75,7 +75,7 @@ Data Cleanup
     UseModal           Off
 Final Cleanup 
     ${query}=     Query Records   SELECT Id FROM nCino_Relationship_Object__c WHERE Name = 'Robots, LLC'
-  
+    Log To Console                ${query}
     #Delete Records    ${query}
 
 
