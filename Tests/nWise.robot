@@ -5,7 +5,7 @@ Suite Setup             Open Browser    about:blank    chrome
 Suite Teardown          Close All Browsers
 
 *** Test Cases ***
-My test case
+Pairwise Test Generation
     [Tags]      testgen       nwise=2
     GoTo        https://copado.com
     ClickText                 Book a Demo
