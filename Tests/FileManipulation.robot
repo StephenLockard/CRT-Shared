@@ -2,7 +2,6 @@
 Resource                        ../Common/common.robot
 Suite Setup                     Setup Browser
 Suite Teardown                  End suite
-Library                         DateTime
 
 *** Tests ***
 Upload Files Test
