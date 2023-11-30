@@ -7,4 +7,5 @@ Suite Teardown                  End suite
 Upload Files Test
     Home
     GoTo    https://slockard-dev-ed.lightning.force.com/lightning/r/Account/0017Q000018oPgrQAE/view
-    UploadFile    Upload Files    ../README.md    anchor=or drop files
+    ClickText    Upload Files
+    UploadFile    Upload Files    ${CURDIR}/../README.md    
