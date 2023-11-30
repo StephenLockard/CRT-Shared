@@ -19,7 +19,7 @@ Setup Browser
     Evaluate                    random.seed()
     Open Browser                about:blank                 ${BROWSER}    
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
-    SetConfig                   DefaultTimeout              40s                         #sometimes salesforce is slow
+    SetConfig                   DefaultTimeout              20s                         #sometimes salesforce is slow
     SetConfig                   CaseInsensitive             True
 
 End suite
