@@ -10,6 +10,7 @@ Create New Relationship
     [Documentation]    In this test a new relationshop is created and verified
     [tags]             Relationship                Regression
     SetConfig          DefaultTimeout              60s
+    SetConfig          Delay                       0.3
     nCino Login
     ClickText          Relationships
     Sleep              4
