@@ -15,6 +15,7 @@ Create New Relationship
     ClickText          Relationships
     Sleep              4
     ClickText          New
+    UseModal           On
     VerifyText         New Relationship
     ClickText          Individual
     ClickText          Next
