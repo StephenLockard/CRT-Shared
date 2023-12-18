@@ -40,9 +40,8 @@ Use developer console to Execute Anonymous Apex
     VerifyText         Execute                     anchor=Open Log
     ClickText          Execute                     anchor=Open Log
     VerifyText         Filter
-    Sleep              2
-    TypeText           Filter                      USER_DEBUG
-    VerifyText         ${message}
+    TypeText           Filter                      USER_DEBUG    delay=2
+    VerifyText         ${message}                  delay=3
     LogScreenshot
     CloseWindow
 
