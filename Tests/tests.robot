@@ -1,5 +1,5 @@
 *** Settings ***
-Library                      DataDriver                reader_class=TestDataApi    name=Non_Apple_Devices.xlsx
+Library                      DataDriver                reader_class=TestDataApi    name=Non_Apple_Devices.csv
 Resource                     ../Common/common.robot
 Resource                     settings.robot
 Suite Setup                  Open Browser              about:blank                 chrome
