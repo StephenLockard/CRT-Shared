@@ -11,7 +11,7 @@ ${sampleApex}          System.Debug('${message}');
 Update Remote Site Settings
     Login
     ClickText          Setup
-    ClickText          Setup for current app    delay=1
+    ClickText          Setup for current app    delay=2
     SwitchWindow       NEW
     Sleep              3
     TypeText           Quick Find                  Remote Site Settings
