@@ -21,9 +21,7 @@ Mobile Browser Test
     [Arguments]              ${device}
     Close All Browsers
     OpenBrowser              http://google.com         chrome                      emulation=${device}
-    Handle Cookies Prompt
-    TypeText                 Search                    Copado Robotic Testing\n
-    ClickText                https://www.copado.com
+    GoTo                     https://copado.com
 
     #Accept Cookies
     ClickText                Accept
