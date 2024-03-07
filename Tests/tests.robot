@@ -31,10 +31,10 @@ Simple End To End Flow
     LogScreenshot
     LaunchApp                   Sales
     ClickUntil                  Intelligence View           Leads
-    VerifyText                  Mr. Marty McFly
+    VerifyText                  Marty McFly
     ClickText                   Marty McFly
     ClickText                   Details
-    VerifyField                 Name                        Marty McFly
+    VerifyField                 Name                        Mr. Marty McFly
     VerifyField                 Company                     Copado
     VerifyText                  No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
