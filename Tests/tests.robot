@@ -31,7 +31,7 @@ Simple End To End Flow
     LogScreenshot
     LaunchApp                   Sales
     ClickUntil                  Intelligence View           Leads
-    VerifyText                  Marty McFly
+    VerifyText                  Mr. Marty McFly
     ClickText                   Marty McFly
     ClickText                   Details
     VerifyField                 Name                        Marty McFly
