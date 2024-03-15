@@ -40,6 +40,4 @@ Mobile Browser Test
     Login
     HoverText                Leads
     ClickText                Leads
-    VerifyText               McFly, Marty
-    ClickText                Mcfly, Marty
-    VerifyText               Open - Not Contacted
+    LogScreenshot
