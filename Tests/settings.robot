@@ -38,7 +38,7 @@ DeleteData
     ClickText          ${accountName}
     
 
-    ClickText    Show more actions    anchor=Book Apopintment
+    ClickText    Show more actions    anchor=Book Appointment
     ClickText          Delete
     VerifyText         Are you sure you want to delete this account?
     ClickText          Delete                      2
