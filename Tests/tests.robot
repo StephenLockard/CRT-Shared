@@ -1,4 +1,5 @@
 *** Settings ***
+Library    QWeb
 Resource                        ../Common/common.robot
 Resource                        settings.robot
 Suite Setup                     Setup Browser
@@ -8,35 +9,27 @@ Suite Teardown                  End suite
 Fresh Start
     Cleanup
 Simple End To End Flow
-    [Documentation]             This is an end to end test of a customer-facing lead generating form, and Salesforce.
-    ...                         We enter a lead from a website, log into Salesforce, and verify the lead and status.
-    [Tags]                      E2E           Lead              Lead Generation
-
-    GoTo                        https://www.copado.com/robotic-testing
-    ClickText                   TALK TO SALES
-    
-    #Here we target the "TALK TO SALES" button by attribute or relative XPath. This is how Selenium users and our competitors will target elements. 
-    #Three major pitfalls: Hard to read, hard to write, very brittle (heavy maintenance requirement)
-    # ClickElement              //*[contains(@class, "secondary-btn w-button")]               #Gracious Comment
-    # ClickElement              /html/body/div[2]/div/header/div[1]/div[2]/nav/ul/li[5] #Another Gracious Comment
-
-    TypeText                    First Name*                 Marty
-    TypeText                    Last Name*                  McFly
-    TypeText                    Business Email*             delorean88@copado.com
-    TypeText                    Phone*                      1234567890
-    TypeText                    Company*                    Copado
-    TypeText                    Job Title*                  Sales Engineer
-    DropDown                    Country                     Netherlands
+    [Documentation]   This is an end to end test of a customer-facing lead generating form, and Salesforce.     We enter a lead from a website, log into Salesforce, and verify the lead and status.
+    [Tags]            E2E               Lead              Lead Generation
+    GoTo              https://www.copado.com/robotic-testing
+    ClickText         TALK TO SALES
+    TypeText          First Name*       Marty
+    TypeText          Last Name*        McFly
+    TypeText          Business Email*   delorean88@copado.com
+    TypeText          Phone*            1234567890
+    TypeText          Company*          Copado
+    TypeText          Job Title*        Sales Engineer
+    DropDown          Country           Netherlands
     Home
     LogScreenshot
-    LaunchApp                   Sales
-    ClickUntil                  Intelligence View           Leads
-    VerifyText                  Marty McFly
-    ClickText                   Marty McFly
-    ClickText                   Details
-    VerifyField                 Name                        Mr. Marty McFly
-    VerifyField                 Company                     Copado
-    VerifyText                  No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
+    LaunchApp         Sales
+    ClickUntil        Intelligence View     Leads
+    VerifyText        Marty McFly
+    ClickText         Marty McFly
+    ClickText         Details
+    VerifyField       Name              Mr. Marty McFly
+    VerifyField       Company           Copado
+    VerifyText        No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
 Recorder and Salesforce Guidance
     [Documentation]             Demo how easy it is to automate with the recorder by turning it on and creating a new lead in Salesforce.
