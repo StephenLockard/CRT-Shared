@@ -1,5 +1,4 @@
 *** Settings ***
-
 Documentation           Example on how to use QForce REST API keywords
 Library                 QForce
 Resource                        ../Common/common.robot
