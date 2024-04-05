@@ -13,7 +13,7 @@ Simple End To End Flow
     [Tags]            E2E               Lead              Lead Generation
     GoTo              https://www.copado.com/robotic-testing
     ClickText         TALK TO SALES
-    ClickElement      //*[contains(@class,"secondary-btn w-button")]                        #Friendly comment
+    #ClickElement      //*[contains(@class,"secondary-btn w-button")]                       #Friendly comment
 
     TypeText          First Name*       Marty
     TypeText          Last Name*        McFly
