@@ -12,9 +12,13 @@ Simple End To End Flow
     [Documentation]   This is an end to end test of a customer-facing lead generating form, and Salesforce.     We enter a lead from a website, log into Salesforce, and verify the lead and status.
     [Tags]            E2E               Lead              Lead Generation
     GoTo              https://www.copado.com/robotic-testing
-    ClickText         TALK TO SALES
+    VerifyText        Talk to Sales
+    ClickText         Talk to Sales
+    
+    #This is an example of clicking the same element with a class or xpath based locator. 
     #ClickElement      //*[contains(@class,"secondary-btn w-button")]                       #Friendly comment
-
+    #ClickElement      /html/body/section[1]/div/div/div[1]/div/div/a[3]
+    
     TypeText          First Name*       Marty
     TypeText          Last Name*        McFly
     TypeText          Business Email*   delorean88@copado.com
