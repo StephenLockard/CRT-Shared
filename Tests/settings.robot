@@ -5,6 +5,8 @@ Library    QNow
 ${incident_search}          //input[@class\="form-control" and @placeholder="Search"]
 
 *** Keywords ***
+Configuration
+    SetConfig             HighlightColor              Orange
 ServiceNow Login
     [Documentation]      Login to ServiceNow instance
     GoTo                 ${snowUrl}
