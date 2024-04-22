@@ -68,7 +68,7 @@ Using Global Seach
     [tags]                  Search
     Appstate                ServiceNow Home
 
-    TypeText                Search                      Users\n
+    QNow.GlobalSearch                     Users
     VerifyText              results for Users           # verify partial text / search results available
 
     # open one of the resulting articles
