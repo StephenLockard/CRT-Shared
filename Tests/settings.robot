@@ -1,5 +1,6 @@
 *** Settings ***
 Library    QNow
+Library                   RequestsLibrary
 
 *** Variables ***
 ${incident_search}          //input[@class\="form-control" and @placeholder="Search"]
