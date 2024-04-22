@@ -67,10 +67,8 @@ Edit Incident
 Using Global Seach
     [tags]                  Search
     Appstate                ServiceNow Home
-
     QNow.GlobalSearch                     Users
     VerifyText              results for Users           # verify partial text / search results available
-
     # open one of the resulting articles
     ClickText               Forgot email password
 
