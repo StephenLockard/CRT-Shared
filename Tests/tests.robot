@@ -101,8 +101,6 @@ Create a lead and account, convert a lead to an opportunity.
     VerifyText                  App Launcher
 
     #Cleanup Data
-    Home
-    ClickText                   Accounts
     Cleanup
 
 
