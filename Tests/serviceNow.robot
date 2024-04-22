@@ -18,7 +18,7 @@ Change Timezone
 Create Incident
     [Documentation]         Creates a new incident from UI
     [tags]                  Incidents
-    Appstate                Home
+    Appstate                ServiceNow Home
     # Navigate to Incidents
     ClickText               All applications
     TypeText                Filter navigator            Incidents
@@ -36,13 +36,16 @@ Create Incident
 
     # Submit
     ClickText               Submit
-    VerifyNoText            Submit                      timeout=30                  # wait until "Submit" disappears from the screen
+    
+    ModuleSearch     ${number}
+    VerifyText       I have a problem with my Mac.
+    LogScreenshot
 
 
 Edit Incident
     [Documentation]         Modifies incident details from UI
     [tags]                  Incidents
-    Appstate                Home
+    Appstate                ServiceNow Home
     # Navigate to Incidents
     ClickText               All applications
     TypeText                Filter navigator            Self-Service
@@ -63,7 +66,7 @@ Edit Incident
 
 Using Global Seach
     [tags]                  Search
-    Appstate                Home
+    Appstate                ServiceNow Home
 
     TypeText                Search                      Users\n
     VerifyText              results for Users           # verify partial text / search results available
@@ -95,7 +98,7 @@ Using Global Seach
 
 Remove Incident by REST API
     [tags]                  Incidents                   REST API
-    Appstate                Home
+    Appstate                ServiceNow Home
     Delete Incident         ${number}
 
     # Navigating to Incidents just to verify that incident does not exist anymore
