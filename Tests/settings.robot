@@ -47,7 +47,7 @@ DeleteData
     ClickText          Accounts                    partial_match=False
 
 Cleanup                   
-    Login
+    Home
     Sleep              3
     LaunchApp          Sales
     ClickText          Accounts
