@@ -14,7 +14,7 @@ ServiceNow Login
     TypeText             Password                     ${snowPass}
     ClickText            Log In
 
-ServiceNow               Home
+ServiceNow Home
     [Documentation]      Navigate to homepage, login if needed
     GoTo                 ${snowUrl}
     ${login_status} =    IsText                      Forgot Password    timeout=2
