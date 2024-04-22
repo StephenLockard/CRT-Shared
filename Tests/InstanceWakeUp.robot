@@ -10,9 +10,9 @@ Wake up - login to developer site
     SetConfig          ShadowDOM                   True            # Shadow DOM support
     GoTo               https://developer.servicenow.com/
     ClickText          Sign In
-    TypeText           Email                       ${snowUser}
+    TypeText           Email                       ${snowDevUser}
     ClickText          Next
-    TypeSecret         Password                    ${snowPass}     delay=2
+    TypeSecret         Password                    ${snowDevPass}     delay=2
     ClickText          Sign In
     VerifyText         Welcome to ServiceNow!      delay=60        # waiting 1 min for instance to start waking up
 
