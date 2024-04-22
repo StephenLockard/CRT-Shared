@@ -107,5 +107,5 @@ Remove Incident by REST API
     ClickText               Incidents
     VerifyText              Number                      # just to verify that the Incidents view opens
 
-    TypeText                ${incident_search}          ${number}\n
+    ModuleSearch          ${number}
     VerifyText              No records to display
