@@ -4,9 +4,6 @@ Resource                    settings.robot
 Suite Setup                 Setup Browser
 Suite Teardown              End suite
 
-*** Variables ***
-${incident_search}          //input[@class\="form-control" and @placeholder="Search"]
-
 *** Test Cases ***
 Change Timezone
     [tags]                  Settings
