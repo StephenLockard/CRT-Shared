@@ -7,7 +7,6 @@ Suite Teardown              End suite
 *** Test Cases ***
 Change Timezone
     [tags]                  Settings
-    Appstate                Home
     ClickText               Settings
     DropDown                Time zone                   Europe/Paris
     VerifySelectedOption    Time zone                   Europe/Paris
