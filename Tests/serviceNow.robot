@@ -7,7 +7,8 @@ Suite Teardown              End suite
 *** Test Cases ***
 Change Timezone
     [tags]                  Settings
-    AppState                ServiceNow Home
+    Configuration
+    ServiceNow Login
     ClickText               Settings
     DropDown                Time zone                   Europe/Paris
     VerifySelectedOption    Time zone                   Europe/Paris
