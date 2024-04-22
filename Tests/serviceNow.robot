@@ -1,14 +1,13 @@
 *** Settings ***
-Resource                    settings.robot
 Resource                    ../Common/common.robot
-
+Resource                    settings.robot
 Suite Setup                 Setup Browser
 Suite Teardown              End suite
 
 *** Test Cases ***
 Change Timezone
     [tags]                  Settings
-    settings.Login
+    AppState                ServiceNow Login
     ClickText               Settings
     DropDown                Time zone                   Europe/Paris
     VerifySelectedOption    Time zone                   Europe/Paris
