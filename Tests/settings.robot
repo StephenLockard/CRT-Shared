@@ -5,7 +5,7 @@ Library    QNow
 ${incident_search}          //input[@class\="form-control" and @placeholder="Search"]
 
 *** Keywords ***
-Login
+ServiceNow Login
     [Documentation]      Login to ServiceNow instance
     GoTo                 ${login_url}
     Dropdown             language_select              en
