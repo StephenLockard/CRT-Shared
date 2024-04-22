@@ -103,7 +103,7 @@ Create a lead and account, convert a lead to an opportunity.
     #Cleanup Data
     Home
     ClickText                   Accounts
-    RunBlock                    VerifyNoAccounts            timeout=180s                exp_handler=DeleteData
+    Cleanup
 
 
 Expected failure and Self Healing
