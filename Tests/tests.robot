@@ -58,7 +58,6 @@ Create a lead and account, convert a lead to an opportunity.
     
     TypeText                    First Name                  ${first}
     TypeText                    Last Name                   ${last}
-    #Picklist                    Salutation                  Mr.
     ClickText                   Save                        partial_match=false
     UseModal                    Off                         #Turn off UseModal to interact with the error notification.
     VerifyText                  We hit a snag.
