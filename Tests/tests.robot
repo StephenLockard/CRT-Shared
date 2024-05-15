@@ -33,7 +33,7 @@ Simple End To End Flow
     ClickText         Marty McFly
     ClickText         Details
     VerifyField       Name              Mr. Marty McFly
-    VerifyField       Company           Copado123
+    VerifyField       Company           Copado
     VerifyText        No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
 Recorder and Salesforce Guidance
