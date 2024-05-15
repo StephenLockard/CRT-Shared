@@ -121,6 +121,7 @@ Service Console E2E
     ClickText     Sign in              delay=5
     ClickText     Proton Mail
     ClickText     New message
+    
     WriteText     demoSupport@copado.com
     TypeText      Subject              Password reset
     TypeText      Sent with Proton Mail secure email    Please reset the password for my user, I forgot it and do not have access to recovery methods. 
