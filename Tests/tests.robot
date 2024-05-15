@@ -17,7 +17,21 @@ Simple End To End Flow
     #This is an example of clicking the same element with a class or xpath based locator. 
     #ClickElement      //*[contains(@class,"secondary-btn w-button")]                       #Friendly comment
     #ClickElement      /html/body/section[1]/div/div/div[1]/div/div/a[3]
+
+    #First partial match
+    VerifyText        Learn More
+    #Exact match
+    VerifyText        Learn More        partial_match=false
+    #Text based anchor
+    VerifyText        Learn More        anchor=Technical Architects
+    #Index
+    VerifyText        Learn More       anchor=3 
+    #QVision
+    QVision.VerifyText               Learn More
+    #Xpath  
     
+
+
     TypeText          First Name*       Marty
     TypeText          Last Name*        McFly
     TypeText          Business Email*   delorean88@copado.com
