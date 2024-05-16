@@ -14,6 +14,8 @@ Simple End To End Flow
     VerifyText        Talk to Sales
     ClickText         Talk to Sales
 
+
+### The Copado targeting strategy is a recommended order of preference for choosing element locators:
     # #1 First partial match
     # VerifyText        Learn More
 
