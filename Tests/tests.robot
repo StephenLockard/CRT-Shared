@@ -13,30 +13,11 @@ Simple End To End Flow
     [Tags]                      E2E                         Lead                        Lead Generation
     GoTo                        https://www.copado.com/robotic-testing
     VerifyText                  Talk to Sales
-    ClickText                   Talk to Sales
+    ClickText                   Talk to Sales       
+          
 
-
-    ### The Copado targeting strategy is a recommended order of preference for choosing element locators:
-    # #1 First partial match
-    # VerifyText                Learn More
-
-    # #2 Exact match
-    # VerifyText                Learn More                  partial_match=false
-
-    # #3 Text based anchor
-    # VerifyText                Learn More                  anchor=Technical Architects
-
-    # #4 Index
-    # VerifyText                Learn More                  anchor=3
-
-    # #5 QVision
-    # QVision.VerifyText        Learn More
-
-    # #6 Attribute locator
-    # ClickElement              //*[contains(@class,"secondary-btn w-button")]          #Friendly comment
-
-    # #7 Xpath locator
-    # ClickElement              /html/body/section[1]/div/div/div[1]/div/div/a[3]
+    ClickElement                //*[contains(@class,"secondary-btn w-button")]
+    ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
 
 
 
@@ -77,14 +58,14 @@ Targeting strategy
     VerifyText                  Learn More                  anchor=Technical Architects
     #4 Index
     VerifyText                  Learn More                  anchor=3
-    # #5 QVision
-    # QVision.VerifyText        Learn Mor
+    #5 QVision
+    QVision.VerifyText        Learn More
 
     #While we prefer not to use traditional locators, they are a fallback option.
     #6 Attribute locator
     VerifyElement                //*[contains(@class,"button-text-with-right-icon")]          #Friendly comment
     #7 Xpath locator
-    ClickElement                /html/body/section[7]/div/div[2]/div/div[1]/div/div[14]/div/div[2]/a/div/div
+    VerifyElement                /html/body/section[7]/div/div[2]/div/div[1]/div/div[14]/div/div[2]/a/div/div
 Create a lead and account, convert a lead to an opportunity. 
     [Documentation]             This is an example of entering and converting a lead.
     [tags]                      Lead                        Account                     Opportunity
