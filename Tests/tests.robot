@@ -1,5 +1,4 @@
 *** Settings ***
-Library                         QWeb
 Resource                        ../Common/common.robot
 Resource                        settings.robot
 Suite Setup                     Setup Browser
