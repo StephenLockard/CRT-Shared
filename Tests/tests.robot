@@ -14,9 +14,9 @@ Simple End To End Flow
     VerifyText                  Talk to Sales
     ClickText                   Talk to Sales       
           
-
-    ClickElement                //*[contains(@class,"secondary-btn w-button")]
-    ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
+##We prefer not to use a traditional attribute or Xpath locator but it is possible.
+   # ClickElement                //*[contains(@class,"secondary-btn w-button")]
+   # ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
 
 
 
