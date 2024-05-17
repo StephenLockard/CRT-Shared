@@ -1,4 +1,5 @@
 *** Settings ***
+Library                         QWeb
 Resource                        ../Common/common.robot
 Resource                        settings.robot
 Suite Setup                     Setup Browser
@@ -8,54 +9,54 @@ Suite Teardown                  End suite
 Fresh Start
     Cleanup
 Simple End To End Flow
-    [Documentation]   This is an end to end test of a customer-facing lead generating form, and Salesforce.     We enter a lead from a website, log into Salesforce, and verify the lead and status.
-    [Tags]            E2E               Lead              Lead Generation
-    GoTo              https://www.copado.com/robotic-testing
-    VerifyText        Talk to Sales
-    ClickText         Talk to Sales
+    [Documentation]             This is an end to end test of a customer-facing lead generating form, and Salesforce.                      We enter a lead from a website, log into Salesforce, and verify the lead and status.
+    [Tags]                      E2E                         Lead                        Lead Generation
+    GoTo                        https://www.copado.com/robotic-testing
+    VerifyText                  Talk to Sales
+    ClickText                   Talk to Sales
 
 
-### The Copado targeting strategy is a recommended order of preference for choosing element locators:
+    ### The Copado targeting strategy is a recommended order of preference for choosing element locators:
     # #1 First partial match
-    # VerifyText        Learn More
+    # VerifyText                Learn More
 
     # #2 Exact match
-    # VerifyText        Learn More        partial_match=false
+    # VerifyText                Learn More                  partial_match=false
 
     # #3 Text based anchor
-    # VerifyText        Learn More        anchor=Technical Architects
+    # VerifyText                Learn More                  anchor=Technical Architects
 
     # #4 Index
-    # VerifyText        Learn More       anchor=3 
+    # VerifyText                Learn More                  anchor=3
 
     # #5 QVision
-    # QVision.VerifyText               Learn More 
+    # QVision.VerifyText        Learn More
 
     # #6 Attribute locator
-    # ClickElement      //*[contains(@class,"secondary-btn w-button")]                       #Friendly comment
+    # ClickElement              //*[contains(@class,"secondary-btn w-button")]          #Friendly comment
 
     # #7 Xpath locator
-    # ClickElement      /html/body/section[1]/div/div/div[1]/div/div/a[3]
-    
+    # ClickElement              /html/body/section[1]/div/div/div[1]/div/div/a[3]
 
 
-    TypeText          First Name*       Marty
-    TypeText          Last Name*        McFly
-    TypeText          Business Email*   delorean88@copado.com
-    TypeText          Phone*            1234567890
-    TypeText          Company*          Copado
-    TypeText          Job Title*        Sales Engineer
-    DropDown          Country           Netherlands
+
+    TypeText                    First Name*                 Marty
+    TypeText                    Last Name*                  McFly
+    TypeText                    Business Email*             delorean88@copado.com
+    TypeText                    Phone*                      1234567890
+    TypeText                    Company*                    Copado
+    TypeText                    Job Title*                  Sales Engineer
+    DropDown                    Country                     Netherlands
     Home
     LogScreenshot
-    LaunchApp         Sales
-    ClickUntil        Intelligence View     Leads
-    VerifyText        Marty McFly
-    ClickText         Marty McFly
-    ClickText         Details
-    VerifyField       Name              Mr. Marty McFly
-    VerifyField       Company           Copado
-    VerifyText        No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
+    LaunchApp                   Sales
+    ClickUntil                  Intelligence View           Leads
+    VerifyText                  Marty McFly
+    ClickText                   Marty McFly
+    ClickText                   Details
+    VerifyField                 Name                        Mr. Marty McFly
+    VerifyField                 Company                     Copado
+    VerifyText                  No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
 Recorder and Salesforce Guidance
     [Documentation]             Demo how easy it is to automate with the recorder by turning it on and creating a new lead in Salesforce.
@@ -63,20 +64,41 @@ Recorder and Salesforce Guidance
     [Tags]                      E2E                         Lead Generation             Recorded                    Salesforce Guidance
     Home
 
+Targeting strategy              
+    GoTo                        https://copado.com
+    ScrollTo                    Any role. Any team. Any skill set.
+
+    ### The Copado targeting strategy is a recommended order of preference for choosing element locators:\
+    #1 First partial match
+    VerifyText                  Learn More
+    #2 Exact match
+    VerifyText                  Learn More                  partial_match=false
+    #3 Text based anchor
+    VerifyText                  Learn More                  anchor=Technical Architects
+    #4 Index
+    VerifyText                  Learn More                  anchor=3
+    # #5 QVision
+    # QVision.VerifyText        Learn Mor
+
+    #While we prefer not to use traditional locators, they are a fallback option.
+    #6 Attribute locator
+    VerifyElement                //*[contains(@class,"button-text-with-right-icon")]          #Friendly comment
+    #7 Xpath locator
+    ClickElement                /html/body/section[7]/div/div[2]/div/div[1]/div/div[14]/div/div[2]/a/div/div
 Create a lead and account, convert a lead to an opportunity. 
     [Documentation]             This is an example of entering and converting a lead.
-    [tags]                      Lead       Account    Opportunity                 
+    [tags]                      Lead                        Account                     Opportunity
 
     #Verify we are home, and begin entering a new lead.
     Home
     LaunchApp                   Sales
-    ClickUntil                  Recently Viewed                   Leads
+    ClickUntil                  Recently Viewed             Leads
     ClickText                   New
 
     #Verify data validation by attempting to save an incomplete form
-    UseModal                    On                          #The UseModal keyword allows us to easily target only the elements on the currently active modal. 
+    UseModal                    On                          #The UseModal keyword allows us to easily target only the elements on the currently active modal.
     VerifyText                  New Lead
-    
+
     TypeText                    First Name                  ${first}
     TypeText                    Last Name                   ${last}
     ClickText                   Save                        partial_match=false
@@ -135,25 +157,25 @@ Expected failure and Self Healing
     #VerifyText                 SPEAK TO SALES              timeout=5
 
 Service Console E2E
-    GoTo    https://account.proton.me/login
-    VerifyText    Email or Username
-    TypeText      Email or Username    slockardCopado@proton.me
-    TypeText      Password             ${protonPass}
-    ClickText     Sign in              delay=5
-    ClickText     Proton Mail
-    ClickText     New message
-    
-    WriteText     demoSupport@copado.com
-    TypeText      Subject              Password reset
-    TypeText      Sent with Proton Mail secure email    Please reset the password for my user, I forgot it and do not have access to recovery methods. 
-    #Delete draft to prevent spam, in this demo we pretend that Email to Case is being triggered.
-    ClickText     Delete draft
-    VerifyText    Are you sure you want to permanently delete this draft?
-    ClickText     Delete
+    GoTo                        https://account.proton.me/login
+    VerifyText                  Email or Username
+    TypeText                    Email or Username           slockardCopado@proton.me
+    TypeText                    Password                    ${protonPass}
+    ClickText                   Sign in                     delay=5
+    ClickText                   Proton Mail
+    ClickText                   New message
 
-    Home          
-    
+    WriteText                   demoSupport@copado.com
+    TypeText                    Subject                     Password reset
+    TypeText                    Sent with Proton Mail secure email                      Please reset the password for my user, I forgot it and do not have access to recovery methods.
+    #Delete draft to prevent spam, in this demo we pretend that Email to Case is being triggered.
+    ClickText                   Delete draft
+    VerifyText                  Are you sure you want to permanently delete this draft?
+    ClickText                   Delete
+
+    Home
+
 Create New Service Case with Recorder
     Home
-    
+
 
