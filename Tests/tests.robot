@@ -31,6 +31,7 @@ Simple End To End Flow
     LogScreenshot
     LaunchApp                   Sales
     ClickUntil                  Intelligence View           Leads
+    GoTo                        https://slockard-dev-ed.lightning.force.com/lightning/r/Lead/00Q7Q00000FtYjdUAF/view
     VerifyText                  Marty McFly
     ClickText                   Marty McFly
     ClickText                   Details
