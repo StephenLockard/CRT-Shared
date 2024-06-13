@@ -1,7 +1,4 @@
 *** Settings ***
-
-Documentation                New test suite
-Library                      QWeb
 Library                      DateTime
 Suite Setup                  Open Browser                about:blank                 chrome
 Suite Teardown               Close All Browsers
