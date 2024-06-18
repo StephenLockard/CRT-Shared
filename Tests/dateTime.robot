@@ -1,7 +1,9 @@
 *** Settings ***
+Resource                     ../Common/common.robot
 Library                      DateTime
 Suite Setup                  Open Browser                about:blank                 chrome
 Suite Teardown               Close All Browsers
+
 
 *** Variables ***
 ${currentMonth}
@@ -11,10 +13,10 @@ ${firstDayNextMonth}
 
 *** Test Cases ***
 Working with Date Formats
-    ${now}=                     Get Current Date
+    ${now}=                  Get Current Date
 
-    ${timestamp}=               Convert Date                ${now}                      result_format=%b %d, %Y
-    ${timestamp}=               Convert Date                ${now}                      result_format=%d %b %Y %I:%M %p
+    ${timestamp}=            Convert Date                ${now}                      result_format=%b %d, %Y
+    ${timestamp}=            Convert Date                ${now}                      result_format=%d %b %Y %I:%M %p
 First day of next month
     ${firstDayNextMonth}=    First day of next month
 
@@ -25,8 +27,8 @@ First day of next month
     [Return]                 ${firstDayNextMonth}
 Check Date
     ${currentMonth}          Get Current Date            result_format=%m
-    ${correctYear}          Get Current Date            result_format=%Y
-    Set Suite Variable                               ${correctYear}    
+    ${correctYear}           Get Current Date            result_format=%Y
+    Set Suite Variable       ${correctYear}
     IF                       '${currentMonth}' == '01'
         Set Suite Variable                               ${nextMonth}                02
         Log                  ${nextMonth}
@@ -37,7 +39,7 @@ Check Date
         Set Suite Variable                               ${nextMonth}                04
         Log                  ${nextMonth}
     ELSE IF                  '${currentMonth}' == '04'
-        Set Suite Variable                               ${nextMonth}                05           
+        Set Suite Variable                               ${nextMonth}                05
         Log                  ${nextMonth}
     ELSE IF                  '${currentMonth}' == '05'
         Set Suite Variable                               ${nextMonth}                06
