@@ -11,7 +11,7 @@ Configuration
 ServiceNow Login
     [Documentation]      Login to ServiceNow instance
     GoTo                 ${snowUrl}
-    Dropdown             language_select             en
+    #Dropdown             language_select             en
     VerifyText           User name                   delay=2                     # wait until label is translated correctly
     TypeText             User name                   ${snowUser}
     TypeText             Password                    ${snowPass}
