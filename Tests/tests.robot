@@ -17,7 +17,7 @@ Update Remote Site Settings
     TypeText           Quick Find                  Remote Site Settings
     ClickText          Remote Site Settings
     ClickText          Edit                        anchor=AA_Example
-    TypeText           Remote Site Name            BB_Example
+    TypeText           Remote Site Name            AA_Example
     TypeText           Remote Site URL             https://updatedexample.new
     ClickCheckbox      Disable Protocol Security                               on
     TypeText           Description                 This description has been updated by a robot!
