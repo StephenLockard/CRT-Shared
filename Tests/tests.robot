@@ -14,7 +14,7 @@ Simple End To End Flow
     VerifyText                  Talk to Sales
     ClickText                   Talk to Sales       
           
-##We prefer not to use a traditional attribute or Xpath locator but it is possible.
+##While we have the capability, we prefer not to use a traditional attribute or Xpath locator because they are difficult to read, write, and maintain.
     #ClickElement                //*[contains(@class,"secondary-btn w-button")]                                  #Nice comment from a cool dude
     #ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
 
