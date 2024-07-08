@@ -8,7 +8,8 @@ Suite Teardown                  End suite
 Fresh Start
     Cleanup
 Simple End To End Flow
-    [Documentation]             This is an end to end test of a customer-facing lead generating form, and Salesforce.                      We enter a lead from a website, log into Salesforce, and verify the lead and status.
+    [Documentation]             This is an end to end test of a customer-facing lead generating form, and Salesforce.                     
+    ...                         We enter a lead from a website, log into Salesforce, and verify the lead and status.
     [Tags]                      E2E                         Lead                        Lead Generation
     GoTo                        https://www.copado.com/robotic-testing
     VerifyText                  Talk to Sales
