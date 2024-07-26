@@ -12,9 +12,8 @@ Update Remote Site Settings
     Login
     ClickText          Setup
     ClickText          Setup for current app    delay=2
-    SwitchWindow       NEW
-    Sleep              3
-    TypeText           Quick Find                  Remote Site Settings
+    SwitchWindow       NEW                      delay=2
+    TypeText           Quick Find                  Remote Site Settings    delay=2
     ClickText          Remote Site Settings
     ClickText          Edit                        anchor=AA_Example
     TypeText           Remote Site Name            AA_Example
