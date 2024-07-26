@@ -28,7 +28,6 @@ Use developer console to Execute Anonymous Apex
     Home
     ClickText          Setup
     ClickText          Developer Console
-    #Tell the robot that we are on a new browser window
     SwitchWindow       NEW       
     VerifyText         Query Editor
     ClickText          Debug
