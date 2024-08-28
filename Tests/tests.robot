@@ -1,5 +1,5 @@
 *** Settings ***
-Library    QWeb
+Library                QWeb
 Resource               ../Common/common.robot
 Suite Setup            Setup Browser
 Suite Teardown         End suite
@@ -12,9 +12,9 @@ ${sampleApex}          System.Debug('${message}');
 Update Remote Site Settings
     Login
     ClickText          Setup
-    ClickText          Setup for current app    delay=2
-    SwitchWindow       NEW                      
-    TypeText           Quick Find                  Remote Site Settings    delay=2
+    ClickText          Setup for current app       delay=2
+    SwitchWindow       NEW
+    TypeText           Quick Find                  Remote Site Settings        delay=2
     ClickText          Remote Site Settings        delay=2
     ClickText          Edit                        anchor=AA_Example
     TypeText           Remote Site Name            AA_Example
@@ -29,7 +29,7 @@ Use developer console to Execute Anonymous Apex
     Home
     ClickText          Setup
     ClickText          Developer Console
-    SwitchWindow       NEW       
+    SwitchWindow       NEW
     VerifyText         Query Editor
     ClickText          Debug
     VerifyText         Open Execute Anonymous Window
@@ -39,7 +39,7 @@ Use developer console to Execute Anonymous Apex
     VerifyText         Execute                     anchor=Open Log
     ClickText          Execute                     anchor=Open Log
     VerifyText         Filter
-    TypeText           Filter                      USER_DEBUG    delay=2
+    TypeText           Filter                      USER_DEBUG                  delay=2
     VerifyText         ${message}                  delay=3
     LogScreenshot
     CloseWindow
@@ -58,11 +58,11 @@ Update Session Settings
     ClickCheckbox      Disable session timeout warning popup                   on
     ClickCheckbox      Enforce login IP ranges on every request                on
     ScrollTo           Lightning Login
-    ClickCheckbox      Allow only for users with the Lightning Login User permission    on
+    ClickCheckbox      Allow only for users with the Lightning Login User permission      on
     ScrollTo           Session Security Levels
-    ClickText          Multi-Factor Authentication                    partial_match=false
-    ClickElement       //*[@title\="Add"]    
-    LogScreenShot      
+    ClickText          Multi-Factor Authentication                             partial_match=false
+    ClickElement       //*[@title\="Add"]
+    LogScreenShot
     Clicktext          Cancel
     CloseWindow
 
@@ -71,9 +71,12 @@ Enable Einstein
     ClickText          Setup
     ClickText          Setup for current app
     SwitchWindow       NEW
-    TypeText           Quick Find                 Einstein
-    ClickText          Einstein Analytics
-    ClickText          Settings                   anchor=Einstein Discovery
-    ClickCheckbox    Enable Decision Optimization (Beta)EnabledDisabled    on
-    VerifyText       Enabled
-    
+    TypeText           Quick Find                  Einstein
+    ClickText          Settings                    anchor=Einstein Discovery
+    VerifyText         Enable Decision Optimization (Beta)
+    ClickCheckbox      Enable Decision Optimization (Beta)EnabledDisabled      on
+    VerifyText         Enabled
+    ClickCheckbox      Enable Decision Optimization (Beta)EnabledDisabled      off
+    VerifyText         Disabled
+
+
