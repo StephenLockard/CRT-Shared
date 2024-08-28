@@ -1,4 +1,5 @@
 *** Settings ***
+Library    QWeb
 Resource               ../Common/common.robot
 Suite Setup            Setup Browser
 Suite Teardown         End suite
@@ -64,4 +65,15 @@ Update Session Settings
     LogScreenShot      
     Clicktext          Cancel
     CloseWindow
-   
+
+Enable Einstein
+    Home
+    ClickText          Setup
+    ClickText          Setup for current app
+    SwitchWindow       NEW
+    TypeText           Quick Find                 Einstein
+    ClickText          Einstein Analytics
+    ClickText          Settings                   anchor=Einstein Discovery
+    ClickCheckbox    Enable Decision Optimization (Beta)EnabledDisabled    on
+    VerifyText       Enabled
+    
