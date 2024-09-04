@@ -22,7 +22,7 @@ Mobile Browser Test
     Close All Browsers
     OpenBrowser              http://google.com         chrome                      emulation=${device}
     GoTo                     https://copado.com
-
+    Sleep                    2
     #Accept Cookies
     ${privacyPolicy}=        IsText                    Copado has recently updated our Privacy Policy
     IF    ${privacyPolicy}
