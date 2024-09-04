@@ -53,15 +53,12 @@ Edit and Verify Loan Information
     VerifyText         Open                        anchor=Status
     VerifyText         $1,000,000.00               anchor=Loan Amount
     ClickText          Mark Stage as Complete
-    #Sleep              5
-    #VerifyStage        Proposal
+    VerifyAttribute    Proposal    aria-selected    true    element_type=text
 
 Data Cleanup 
-    ClickText          Loans
-    ClickText          To the Moon
+    VerifyText    Delete
     ClickText          Delete
     ClickText          Delete                      anchor=Cancel
-    ClickText          Loans
     Sleep              2
     ClickText          Relationships               partial_match=false
     ${robotsLLC}=      IsText                      Robots, LLC
@@ -72,9 +69,10 @@ Data Cleanup
         Sleep              4
         ClickText          Delete                      anchor=Cancel
         Sleep              4
-        ClickText          Delete                          
+        ClickText          Delete     
+        UseModal           Off                     
     END
-    UseModal           Off
+    
 #Final Cleanup 
     #${query}=     Query Records   SELECT Id FROM nCino_Relationship_Object__c WHERE Name = 'Robots, LLC'
     #Log To Console                ${query}
