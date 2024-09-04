@@ -1,10 +1,10 @@
 *** Settings ***
-#Library                      DataDriver                reader_class=TestDataApi    name=Non_Apple_Devices.csv
+Library                      DataDriver                reader_class=TestDataApi    name=Non_Apple_Devices.csv
 Resource                     ../Common/common.robot
 Resource                     settings.robot
 Suite Setup                  Open Browser              about:blank                 chrome
 Suite Teardown               Close All Browsers
-#Test Template    Mobile Browser Test
+Test Template    Mobile Browser Test
 
 
 
@@ -20,7 +20,7 @@ Mobile Browser Test with ${device}
 Mobile Browser Test
     [Arguments]              ${device}
     Close All Browsers
-    OpenBrowser              http://google.com         chrome                      emulation=Samsung Galaxy S20 Ultra
+    OpenBrowser              http://google.com         chrome                      emulation=${device}
     GoTo                     https://copado.com
 
     #Accept Cookies
