@@ -4,9 +4,9 @@
 *** Keywords ***
 # Example of custom keyword with robot fw syntax
 VerifyStage
-    [Documentation]       Verifies that stage given in ${text} is at ${selected} state; either selected (true) or not selected (false)
-    [Arguments]           ${text}                     ${selected}=true
-    VerifyElement         //a[@title\="${text}"
+    [Documentation]    Verifies that the stage given in ${text} is at ${selected} state; either selected (true) or not selected (false).
+    [Arguments]        ${text}    
+    VerifyAttribute    ${text}    aria-selected    true    element_type=text
 nCino Login
     [Documentation]             Login to Salesforce instance
     GoTo                        ${nCinologinUrl}
