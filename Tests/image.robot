@@ -6,7 +6,7 @@ Suite Teardown  CloseAllBrowsers
 
 *** Test Cases ***
 Verify Boat Color
-    GoTo                        https://www.lundboats.com/build/boat-configurator.Z17IXSS.html
+    GoTo                        https://www.lundboats.com/build/boat-configurator.Z16ANT.html
     # capture first boat image
     ${boat1}=     CaptureIcon                 //img[@alt\="boat-color"] 
     
