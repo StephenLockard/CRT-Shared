@@ -11,7 +11,7 @@ Verify Boat Color
     ${boat1}=     CaptureIcon                 //img[@alt\="boat-color"] 
     
     # select another boat color
-    ClickItem     Cobalt Blue / Silver Stone  tag=label
+    ClickItem     Cobalt Blue  tag=label
     Sleep         2  # make sure new boat image is loaded
     ${boat2}=     CaptureIcon                 //img[@alt\="boat-color"] 
 
