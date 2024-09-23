@@ -16,7 +16,7 @@ Simple End To End Flow
     ClickText                   Talk to Sales       
           
 ##While we have the capability, we prefer not to use a traditional attribute or Xpath locator because they are difficult to read, write, and maintain.
-    ClickElement                //*[contains(@class,"secondary-btn v2 w-button")]                                  #Nice comment from a cool good looking dude
+    #ClickElement                //*[contains(@class,"secondary-btn v2 w-button")]                                  #Nice comment from a cool good looking dude
     #ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
 
 
