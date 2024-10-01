@@ -19,7 +19,7 @@ Simple End To End Flow
     #ClickElement                //*[contains(@class,"secondary-btn v2 w-button")]                                  #Nice comment from a cool good looking dude
     #ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
 
-
+    
 
     TypeText                    First Name*                 Marty
     TypeText                    Last Name*                  McFly
@@ -47,28 +47,28 @@ Recorder and Salesforce Guidance
     Home
 
 Targeting strategy              
-    GoTo                        https://copado.com
+    GoTo                        https://www.copado.com/demo
     #TODO - Update this test case as the demo element no longer exists!!!
     
-    # ScrollTo                    Any role. Any team. Any skill set.
+    ScrollTo                    Demo the industry-leading DevOps platform to see how we empower any Salesforce user to create great software
 
-    # ### The Copado targeting strategy is a recommended order of preference for choosing element locators:\
-    # #1 First partial match
-    # VerifyText                  Learn More
-    # #2 Exact match
-    # VerifyText                  Learn More                  partial_match=false
-    # #3 Text based anchor
-    # VerifyText                  Learn More                  anchor=Technical Architects
-    # #4 Index
-    # VerifyText                  Learn More                  anchor=3
-    # #5 QVision
-    # QVision.VerifyText        Learn More
+    ### The Copado targeting strategy is a recommended order of preference for choosing element locators:\
+    #1 First partial match
+    VerifyText                  Learn More
+    #2 Exact match
+    VerifyText                  Learn More                  partial_match=false
+    #3 Text based anchor
+    VerifyText                  Learn More                  anchor=One Platform for All Your Tools
+    #4 Index
+    VerifyText                  Learn More                  anchor=4
+    #5 QVision
+    #QVision.VerifyText        Learn More
 
-    # #While we prefer not to use traditional locators, they are a fallback option.
-    # #6 Attribute locator
-    # VerifyElement                //*[contains(@class,"button-text-with-right-icon")]          #Friendly comment
-    # #7 Xpath locator
-    # VerifyElement                /html/body/section[7]/div/div[2]/div/div[1]/div/div[14]/div/div[2]/a/div/div
+    #While we prefer not to use traditional locators, they are a fallback option.
+    #6 Attribute locator
+    #VerifyElement                //*[contains(@class,"button-text-with-right-icon")]          #Friendly comment
+    #7 Xpath locator
+    #VerifyElement                /html/body/section[7]/div/div[2]/div/div[1]/div/div[14]/div/div[2]/a/div/div
 Create a lead and account, convert a lead to an opportunity. 
     [Documentation]             This is an example of entering and converting a lead.
     [tags]                      Lead                        Account                     Opportunity
@@ -161,5 +161,4 @@ Service Console E2E
 
 Create New Service Case with Recorder
     Home
-
-
+    
