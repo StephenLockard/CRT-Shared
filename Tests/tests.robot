@@ -40,6 +40,7 @@ Simple End To End Flow
     VerifyField                 Company                     Copado
     VerifyText                  No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
 
+    
 Recorder and Salesforce Guidance
     [Documentation]             Demo how easy it is to automate with the recorder by turning it on and creating a new lead in Salesforce.
     ...                         Next, delete the recorded automation, open the QWord Pallette to demonstrate filling in a new lead with Salesforce Guidance
@@ -159,6 +160,15 @@ Service Console E2E
 
     Home
 
-Create New Service Case with Recorder
+Verify Picklist Only Contains Proper Values
     Home
+    ClickText    Leads
+    ClickText    New
+    UseModal     On
+    ${expectedOptions}    Set Variable    --None--    Mr.    Ms.    Mrs.    Dr.    Prof.
+    ${actualOptions}=      GetPickList        Salutation      
+    Sort List    ${expectedOptions}
+    Sort List    ${actualOptions}
+    Lists Should Be Equal                      ${expectedOptions}      ${actualOptions}
+    ClickText                        Cancel
     
