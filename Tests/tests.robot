@@ -16,7 +16,16 @@ Update Remote Site Settings
     SwitchWindow       NEW
     TypeText           Quick Find                  Remote Site Settings        delay=2
     ClickText          Remote Site Settings        delay=6
-    ClickText          Edit                        anchor=AA_Example
+    ${edit_success}=    Set Variable    False
+    FOR    ${i}    IN RANGE    3
+        ClickText       Edit                       anchor=AA_Example    delay=1
+        ${edit_success}=    Run Keyword And Return Status    VerifyText    Remote Site Name    timeout=5
+        Exit For Loop If    ${edit_success}
+        Log    Edit context not opened, retrying...
+    END
+
+    Run Keyword If    not ${edit_success}    Fail    Failed to open edit context after 3 attempts
+    
     TypeText           Remote Site Name            AA_Example
     TypeText           Remote Site URL             https://updatedexample.new
     ClickCheckbox      Disable Protocol Security                               on
