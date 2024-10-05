@@ -1,10 +1,10 @@
 *** Settings ***
-Library                      DataDriver                reader_class=TestDataApi    name=Non_Apple_Devices.csv
-Resource                     ../Common/common.robot
-Resource                     settings.robot
-Suite Setup                  Open Browser              about:blank                 chrome
-Suite Teardown               Close All Browsers
-Test Template    Mobile Browser Test
+Library                  DataDriver                reader_class=TestDataApi    name=Non_Apple_Devices.csv
+Resource                  ../Common/common.robot
+Resource                  settings.robot
+Suite Setup               Open Browser              about:blank                 chrome
+Suite Teardown            Close All Browsers
+Test Template            Mobile Browser Test
 
 
 
@@ -18,24 +18,23 @@ Mobile Browser Test with ${device}
 
 *** Keywords ***
 Mobile Browser Test
-    [Arguments]              ${device}
+    [Arguments]           ${device}
     Close All Browsers
-    OpenBrowser              http://google.com         chrome                      emulation=${device}
-    GoTo                     https://copado.com
-    Sleep                    2
+    OpenBrowser           http://google.com         chrome                      emulation=${device}
+    GoTo                  https://copado.com        delay=2
     #Accept Cookies
-    ${privacyPolicy}=        IsText                    Copado has recently updated our Privacy Policy
-    IF    ${privacyPolicy}
-        ClickText            Accept
+    ${privacyPolicy}=     IsText                    Copado has recently updated our Privacy Policy
+    IF                    ${privacyPolicy}
+        ClickText         Accept
     END
-    VerifyText               Talk to Sales
-    ClickText                Talk to Sales
+    VerifyText            Book a Demo
+    ClickText             Book a Demo
 
-    TypeText                 First Name*               Marty
-    TypeText                 Last Name*                McFly
-    TypeText                 Business Email*           SavingTime@copado.com
-    TypeText                 Phone*                    1234567890
-    TypeText                 Company*                  Copado
-    TypeText                 Job Title*                Sales Engineer
-    DropDown                 Country                   Finland
-    VerifyText               Submit
+    TypeText              First Name*               Marty
+    TypeText              Last Name*                McFly
+    TypeText              Business Email*           SavingTime@copado.com
+    TypeText              Phone*                    1234567890
+    TypeText              Company*                  Copado
+    TypeText              Job Title*                Sales Engineer
+    DropDown              Country                   Finland
+    VerifyText            Submit
