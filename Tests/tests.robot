@@ -21,7 +21,7 @@ Mobile Browser Test
     [Arguments]           ${device}
     Close All Browsers
     OpenBrowser           http://google.com         chrome                      emulation=${device}
-    GoTo                  https://copado.com        delay=2
+    GoTo                  https://copado.com       
     #Accept Cookies
     ${privacyPolicy}=     IsText                    Copado has recently updated our Privacy Policy
     IF                    ${privacyPolicy}
