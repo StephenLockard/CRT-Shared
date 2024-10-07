@@ -22,6 +22,7 @@ Update Remote Site Settings
         ${edit_success}=    Run Keyword And Return Status    VerifyText    Remote Site Name    timeout=5
         Exit For Loop If    ${edit_success}
         RefreshPage
+        Sleep               2
         Log    Edit context not opened, retrying...
     END
 
