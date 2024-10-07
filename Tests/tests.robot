@@ -21,6 +21,7 @@ Update Remote Site Settings
         ClickText       Edit                       anchor=AA_Example    delay=1
         ${edit_success}=    Run Keyword And Return Status    VerifyText    Remote Site Name    timeout=5
         Exit For Loop If    ${edit_success}
+        RefreshPage
         Log    Edit context not opened, retrying...
     END
 
