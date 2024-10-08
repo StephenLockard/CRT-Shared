@@ -53,3 +53,59 @@ Cleanup
     ClickText          Accounts
     RunBlock           VerifyNoAccounts            timeout=180s             exp_handler=DeleteData
     Sleep              3
+
+Verify New Lead Form
+    UseModal           On
+    VerifyText         New Lead
+
+Fill Lead Information
+    TypeText           First Name    ${first}
+    TypeText           Last Name     ${last}
+    TypeText           Company       ${company}
+    ClickText          Save          partial_match=false
+    VerifyText         ${first} ${last}
+    UseModal           Off
+
+Verify Lead Created
+    VerifyText         ${first} ${last}
+    VerifyText         ${company}
+
+Attempt Incomplete Lead Save
+    UseModal           On
+    TypeText           First Name    ${first}
+    TypeText           Last Name     ${last}
+    ClickText          Save          partial_match=false
+    UseModal           Off
+
+Verify Error Message
+    VerifyText         We hit a snag.
+    VerifyText         Review the following fields
+
+Convert Lead
+    ClickItem          Converted
+    ClickText          Select Converted Status
+    TypeText           Account Name    ${accountName}
+    ClickText          Convert         partial_match=false
+
+Verify Conversion
+    VerifyText         Your lead has been converted
+    VerifyText         ${accountName}
+    VerifyText         ${first} ${last}
+    VerifyText         ${company}-
+    ClickText          Go to Leads
+    UseModal           Off
+
+Verify Opportunity Details
+    ClickText          Opportunities
+    VerifyText         ${company}-
+    ClickText          ${company}-
+    ClickText          Details
+    VerifyText         Leads
+    VerifyText         TEST ROBOT      anchor=2
+    VerifyText         TEST ROBOT      anchor=Stage
+    VerifyField        Probability (%)    10%
+    ScrollTo           Created By
+    ClickText          Edit Description
+    TypeText           Description    Test automation helps us rapidly deliver high quality releases!
+    ClickText          Save
+    VerifyText         App Launcher
