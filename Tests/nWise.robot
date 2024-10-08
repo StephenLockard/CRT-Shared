@@ -6,7 +6,7 @@ Suite Teardown          Close All Browsers
 
 *** Test Cases ***
 Pairwise Test Generation
-    [Tags]      testgen       nwise=2
+    [Tags]      testgen       numtests=50    nwise=2
     GoTo        https://copado.com
     ClickText                 Book a Demo
     TypeText    First Name    [Teo, Dean, Vasil, Larry, Gandalf]
