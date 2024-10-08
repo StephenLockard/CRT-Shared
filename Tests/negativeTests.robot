@@ -29,7 +29,7 @@ Attempt to Create Lead without Company
     LaunchApp                   Sales
     ClickUntil                  Recently Viewed             Leads
     ClickText                   New
-    Fill Lead without Copmany
+    Fill Lead without Company
     Verify Company Error Message
 
 Attempt to Create Lead without Lead Status
