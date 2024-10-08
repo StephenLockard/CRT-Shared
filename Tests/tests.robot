@@ -171,4 +171,36 @@ Verify Picklist Only Contains Proper Values
     Sort List    ${actualOptions}
     Lists Should Be Equal                      ${expectedOptions}      ${actualOptions}
     ClickText                        Cancel
-    
+Create New Lead
+    [Documentation]    Create a new lead in Salesforce
+    [Tags]             Lead    Sales
+    Appstate           Home
+    LaunchApp          Sales
+    ClickUntil         Recently Viewed    Leads
+    ClickText          New
+    Verify New Lead Form
+    Fill Lead Information
+    Verify Lead Created
+
+Verify Data Validation for Lead Creation
+    [Documentation]    Verify data validation when creating a new lead
+    [Tags]             Lead    Validation
+    Appstate           Home
+    LaunchApp          Sales
+    ClickUntil         Recently Viewed    Leads
+    ClickText          New
+    Attempt Incomplete Lead Save
+    Verify Error Message
+
+Convert Lead to Opportunity
+    [Documentation]    Convert a lead to an opportunity
+    [Tags]             Lead    Opportunity    Conversion
+    Appstate           Home
+    LaunchApp          Sales
+    ClickUntil         Recently Viewed    Leads
+    ClickText          ${first} ${last}
+    Convert Lead
+    Verify Conversion
+    Verify Opportunity Details
+Cleanup               
+    Cleanup
