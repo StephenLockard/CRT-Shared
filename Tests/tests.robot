@@ -18,7 +18,7 @@ Update Remote Site Settings
     ClickText          Remote Site Settings        delay=6
     ${edit_success}=    Set Variable    False
     FOR    ${i}    IN RANGE    3
-        ClickText       Edit         delay=3
+        ClickText       Edit         delay=10
         ${edit_success}=    Run Keyword And Return Status    VerifyText    Remote Site Name    timeout=5
         Exit For Loop If    ${edit_success}
         RefreshPage
