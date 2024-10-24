@@ -12,9 +12,8 @@ Create New Relationship
     SetConfig          DefaultTimeout              60s
     SetConfig          Delay                       0.3
     nCino Login
-    ClickText          Relationships
-    Sleep              4
-    ClickText          New
+    ClickText          Relationships               
+    ClickText          New                        delay=4
     UseModal           On
     VerifyText         New Relationship
     ClickText          Individual
