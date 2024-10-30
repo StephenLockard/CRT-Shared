@@ -1,6 +1,6 @@
 # CRT Demo Assets
 
-This is a repository of shared demo assets for the CRT team. 
+This is a repository of shared demo assets for Copado Robotic Testing. 
 
 
 ## Details
@@ -18,10 +18,9 @@ Follow [this short video](https://drive.google.com/file/d/1WLTOacWnyJfnyIYqCwlX9
 If you have already configured your github access token in CRT you may go directly to [this project](https://robotic.copado.com/robots/25618/dashboard).
 
 
-For more information please reach out to a member of the CRT SE team on Slack or visit the  [CRT Resource Hub](https://docs.google.com/spreadsheets/d/1A1yALrnJx08qhN_QBDE9IvQvlujun6NyLI9v61Hoark/edit#gid=0)
-
+For more information please reach out on Slack 
 ## Contributing
 
 Pull requests are welcome. 
 
-**For major changes:** Please open an issue to discuss what you would like to change.
+**For major changes:** Please open an issue or reach out to me in Slack to discuss what you would like to change.
