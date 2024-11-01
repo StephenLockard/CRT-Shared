@@ -160,7 +160,8 @@ Process Builder Flow
     VerifyText             My Processes
     ${success}=    Set Variable    ${FALSE}
     FOR    ${i}    IN RANGE    3
-        ${is_expanded}=    Run Keyword And Return Status    ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+        ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+        ${is_expanded}=                   IsText       Version 1: User Story Commit outdates latest
         Exit For Loop If    ${is_expanded}
         Sleep    3
     END
@@ -171,7 +172,8 @@ Process Builder Flow
     ClickText              Confirm
     ${success}=    Set Variable    ${FALSE}
     FOR    ${i}    IN RANGE    3
-        ${is_expanded}=    Run Keyword And Return Status    ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+        ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+        ${is_expanded}=                   IsText       Version 1: User Story Commit outdates latest
         Exit For Loop If    ${is_expanded}
         Sleep    3
     END
