@@ -158,13 +158,23 @@ Process Builder Flow
     VerifyText             Process Builder
     ClickText              Process Builder
     VerifyText             My Processes
-    ClickText              User Story Commit outdates latest Validation
-    ClickText              Show all versions           anchor=User Story Commit outdates latest Validation
+    ${success}=    Set Variable    ${FALSE}
+    FOR    ${i}    IN RANGE    3
+        ${is_expanded}=    Run Keyword And Return Status    ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+        Exit For Loop If    ${is_expanded}
+        Sleep    3
+    END
+    Run Keyword If    not ${is_expanded}    Fail    Failed to expand "Show all versions" after 3 attempts
     VerifyText             Deactivate                  anchor=Version 1: User Story Commit outdates latest
     ClickText              Deactivate                  anchor=Version 1: User Story Commit outdates latest
     VerifyText             Are you sure you want to deactivate this version?
     ClickText              Confirm
-    ClickText              Show all versions           anchor=User Story Commit outdates latest Validation
+    ${success}=    Set Variable    ${FALSE}
+    FOR    ${i}    IN RANGE    3
+        ${is_expanded}=    Run Keyword And Return Status    ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+        Exit For Loop If    ${is_expanded}
+        Sleep    3
+    END
     VerifyText             Activate                    anchor=Version 1: User Story Commit outdates latest
     ClickText              Activate                    anchor=Version 1: User Story Commit outdates latest
     VerifyText             Activating this process automatically deactivates any other active version.
