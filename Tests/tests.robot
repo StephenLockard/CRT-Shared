@@ -10,6 +10,7 @@ ${sampleApex}              System.Debug('${message}');
 
 *** Test Cases ***
 Update Remote Site Settings
+    [Tags]                 Deployment Automation
     Login
     ClickText              Setup
     ClickText              Setup for current app       delay=2
@@ -36,8 +37,11 @@ Update Remote Site Settings
     LogScreenshot
     ClickText              Cancel
 Use developer console to Execute Anonymous Apex
+    [Tags]                 Deployment Automation
     [Documentation]        This test case executes Apex code from the developer console
     ...                    and verifies that the log accurately reflects our input.
+    ...                    More complex apex scripts can be stored as a .apex file and called directly using
+    ...                    the ExecuteApex keyword.
     Home
     ClickText              Setup
     ClickText              Developer Console
@@ -57,6 +61,7 @@ Use developer console to Execute Anonymous Apex
     CloseWindow
 
 Update Session Settings
+    [Tags]                 Deployment Automation
     Home
     ClickText              Setup
     ClickText              Setup for current app
@@ -79,6 +84,7 @@ Update Session Settings
     CloseWindow
 
 Enable Einstein
+    [Tags]                 Deployment Automation
     Home
     ClickText              Setup
     ClickText              Setup for current app
@@ -93,6 +99,7 @@ Enable Einstein
 
 
 Disable Triggers
+    [Tags]                 WIP                         Deployment Automation
     Home
     #The Setup keyword is failing, locking up the IDE, and providing no error message.
     #However when I run the GoTo command directly without referencing the keyword it works fine.
@@ -104,6 +111,7 @@ Disable Triggers
     VerifyText             This page allows you to view and modify all the triggers                            timeout=60
 
 Disable Validation Rules
+    [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Object Manager
@@ -124,6 +132,7 @@ Disable Validation Rules
     ClickText              Save
 
 Disable Workflow Rules
+    [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Workflow Rules
@@ -136,6 +145,7 @@ Disable Workflow Rules
     ClickText              Activate                    anchor=Mark Early Job Completion as Failed
 
 Process Builder Flow
+    [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Process Builder
@@ -143,16 +153,15 @@ Process Builder Flow
     ClickText              Process Builder
     VerifyText             My Processes
     ClickText              User Story Commit outdates latest Validation
-    ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
-    VerifyText                        Deactivate       anchor=Version 1: User Story Commit outdates latest
-    ClickText                        Deactivate       anchor=Version 1: User Story Commit outdates latest
-    VerifyText                       Are you sure you want to deactivate this version?
-    ClickText                        Confirm
-
-    ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
-    VerifyText                        Activate       anchor=Version 1: User Story Commit outdates latest
-    ClickText                        Activate       anchor=Version 1: User Story Commit outdates latest
-    VerifyText                       Activating this process automatically deactivates any other active version.
-    ClickText                        Confirm
+    ClickText              Show all versions           anchor=User Story Commit outdates latest Validation
+    VerifyText             Deactivate                  anchor=Version 1: User Story Commit outdates latest
+    ClickText              Deactivate                  anchor=Version 1: User Story Commit outdates latest
+    VerifyText             Are you sure you want to deactivate this version?
+    ClickText              Confirm
+    ClickText              Show all versions           anchor=User Story Commit outdates latest Validation
+    VerifyText             Activate                    anchor=Version 1: User Story Commit outdates latest
+    ClickText              Activate                    anchor=Version 1: User Story Commit outdates latest
+    VerifyText             Activating this process automatically deactivates any other active version.
+    ClickText              Confirm
 
 
