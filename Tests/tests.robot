@@ -91,3 +91,9 @@ Enable Einstein
     VerifyText         Disabled
 
 
+Activate Triggers
+    Home
+    #The Setup keyword is failing, locking up the IDE, and providing no error message. 
+    #However when I run the GoTo command directly without referencing the keyword it works fine. 
+    #Setup
+    GoTo                        ${login_url}lightning/setup/SetupOneHome/home
