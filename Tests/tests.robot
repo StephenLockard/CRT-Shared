@@ -58,6 +58,10 @@ Use developer console to Execute Anonymous Apex
     LogScreenshot
     CloseWindow
 
+Execute Apex from File
+    Home
+    ExecuteApex    ${CURDIR}/SampleApex.apex   is_file=True
+
 Update Session Settings
     [Tags]                 Deployment Automation
     Home
@@ -94,14 +98,24 @@ Enable Einstein
 Disable Triggers
     [Tags]                 WIP                         Deployment Automation
     Home
-    #The Setup keyword is failing, locking up the IDE, and providing no error message.
-    #However when I run the GoTo command directly without referencing the keyword it works fine.
-    #Setup
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Apex Triggers
     VerifyText             Apex Triggers
     ClickText              Apex Triggers
     VerifyText             This page allows you to view and modify all the triggers                            timeout=60
+    VerifyText             AccountTriggerExample
+    ClickText              AccountTriggerExample
+    VerifyText             Apex Trigger Detail
+    ClickText              Edit
+    ClickCheckbox          is active                        on
+    VerifyCheckboxValue    is active                        on
+    ClickCheckbox          is active                        off
+    VerifyCheckboxValue    is active                        off
+    ClickText              Save
+    
+
+
+    
 
 Disable Validation Rules
     [Tags]                 Deployment Automation
