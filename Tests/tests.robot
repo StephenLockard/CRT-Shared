@@ -81,7 +81,7 @@ Update Session Settings
     LogScreenShot
     Clicktext              Cancel
 
-Enable Einstein
+Enable/Disable Einstein
     [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
@@ -94,7 +94,7 @@ Enable Einstein
     VerifyText             Disabled
 
 
-Disable Triggers
+Enable/Disable Triggers
     [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
@@ -116,7 +116,7 @@ Disable Triggers
 
 
 
-Disable Validation Rules
+Enable/Disable Validation Rules
     [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
@@ -137,7 +137,7 @@ Disable Validation Rules
     VerifyCheckboxValue    Active                      off
     ClickText              Save
 
-Disable Workflow Rules
+Enable/Disable Workflow Rules
     [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
@@ -150,7 +150,7 @@ Disable Workflow Rules
     VerifyText             Activate                    anchor=Mark Early Job Completion as Failed
     ClickText              Activate                    anchor=Mark Early Job Completion as Failed
 
-Process Builder Flow
+Activate/Deactivate Process Builder
     [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
