@@ -60,6 +60,7 @@ Use developer console to Execute Anonymous Apex
 
 Execute Apex from File
     Home
+    Authenticate
     ExecuteApex    ${CURDIR}/SampleApex.apex   is_file=True
 
 Update Session Settings
