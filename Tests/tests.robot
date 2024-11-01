@@ -80,7 +80,6 @@ Update Session Settings
     ClickElement           //*[@title\="Add"]
     LogScreenShot
     Clicktext              Cancel
-    CloseWindow
 
 Enable Einstein
     [Tags]                 Deployment Automation
