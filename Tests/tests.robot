@@ -60,8 +60,8 @@ Use developer console to Execute Anonymous Apex
 
 Execute Apex from File
     Home
-    Authenticate
-    ExecuteApex    ${CURDIR}/SampleApex.apex   is_file=True
+    Authenticate    ${consumer_key}    ${consumer_secret}    ${username}    ${password}
+    ${results}=     ExecuteApex    ${CURDIR}/sampleApex.apex   is_file=True
 
 Update Session Settings
     [Tags]                 Deployment Automation
