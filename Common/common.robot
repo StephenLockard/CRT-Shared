@@ -8,7 +8,7 @@ Library                         Collections
 
 *** Variables ***
 ${BROWSER}                      chrome
-${homeUrl}                     ${loginUrl}/lightning/page/home
+${homeUrl}                      ${loginUrl}/lightning/page/home
 
 
 
@@ -16,7 +16,7 @@ ${homeUrl}                     ${loginUrl}/lightning/page/home
 Setup Browser
     Set Library Search Order    QWeb
     Evaluate                    random.seed()
-    Open Browser                about:blank                 ${BROWSER}    
+    Open Browser                about:blank                 ${BROWSER}
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
     SetConfig                   DefaultTimeout              20s                         #sometimes salesforce is slow
     SetConfig                   CaseInsensitive             True
@@ -33,9 +33,9 @@ Login
     ${isMFA}=                   IsText                      Verify Your Identity        #Determines MFA is prompted
     Log To Console              ${isMFA}
     IF                          ${isMFA}                    #Conditional Statement for if MFA verification is required to proceed
-         ${mfa_code}=            GetOTP                      ${username}                 ${MY_SECRET}                ${password}
-         TypeSecret              Code                        ${mfa_code}
-         ClickText               Verify
+        ${mfa_code}=            GetOTP                      ${username}                 ${MY_SECRET}                ${password}
+        TypeSecret              Code                        ${mfa_code}
+        ClickText               Verify
     END
 
 Setup       
@@ -69,4 +69,4 @@ MFA Login
         ClickText               Verify
     END
 
-#TODO: Add Login As
+    #TODO: Add Login As
