@@ -12,9 +12,7 @@ ${sampleApex}              System.Debug('${message}');
 Update Remote Site Settings
     [Tags]                 Deployment Automation
     Login
-    ClickText              Setup
-    ClickText              Setup for current app       delay=2
-    SwitchWindow           NEW
+    GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Remote Site Settings        delay=2
     ClickText              Remote Site Settings        delay=6
     #Retry logic has been implemented, this will attempt to refresh the page three times.
@@ -63,10 +61,7 @@ Use developer console to Execute Anonymous Apex
 Update Session Settings
     [Tags]                 Deployment Automation
     Home
-    ClickText              Setup
-    ClickText              Setup for current app
-    SwitchWindow           NEW
-    Sleep                  3
+    GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  session
     VerifyText             Session Settings
     ClickText              Session Settings
@@ -86,9 +81,7 @@ Update Session Settings
 Enable Einstein
     [Tags]                 Deployment Automation
     Home
-    ClickText              Setup
-    ClickText              Setup for current app
-    SwitchWindow           NEW
+    GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Einstein
     ClickText              Settings                    anchor=Einstein Discovery
     VerifyText             Enable Decision Optimization (Beta)
