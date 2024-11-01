@@ -19,7 +19,7 @@ Update Remote Site Settings
     ${edit_success}=       Set Variable                False
     FOR                    ${i}                        IN RANGE                    3
         ClickText          Edit                        delay=10
-        ${edit_success}=                               Run Keyword And Return Status                           VerifyText    Remote Site Name    timeout=5
+        ${edit_success}=                               Run Keyword And Return Status                           VerifyText     Remote Site Name    timeout=5
         Exit For Loop If                               ${edit_success}
         RefreshPage
         Sleep              2
@@ -60,9 +60,9 @@ Use developer console to Execute Anonymous Apex
 
 Execute Apex from File
     Home
-    Authenticate    ${consumer_key}    ${consumer_secret}    ${username}    ${password}
-    ${results}=     ExecuteApex    ${CURDIR}/sampleApex.apex   is_file=True
-    
+    Authenticate           ${consumer_key}             ${consumer_secret}          ${username}                 ${password}
+    ${results}=            ExecuteApex                 ${CURDIR}/sampleApex.apex                               is_file=True
+
 Update Session Settings
     [Tags]                 Deployment Automation
     Home
@@ -97,7 +97,7 @@ Enable Einstein
 
 
 Disable Triggers
-    [Tags]                 WIP                         Deployment Automation
+    [Tags]                 Deployment Automation
     Home
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Apex Triggers
@@ -108,15 +108,15 @@ Disable Triggers
     ClickText              AccountTriggerExample
     VerifyText             Apex Trigger Detail
     ClickText              Edit
-    ClickCheckbox          is active                        on
-    VerifyCheckboxValue    is active                        on
-    ClickCheckbox          is active                        off
-    VerifyCheckboxValue    is active                        off
+    ClickCheckbox          is active                   on
+    VerifyCheckboxValue    is active                   on
+    ClickCheckbox          is active                   off
+    VerifyCheckboxValue    is active                   off
     ClickText              Save
-    
 
 
-    
+
+
 
 Disable Validation Rules
     [Tags]                 Deployment Automation
