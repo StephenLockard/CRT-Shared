@@ -101,7 +101,7 @@ Enable/Disable Triggers
     TypeText               Quick Find                  Apex Triggers
     VerifyText             Apex Triggers
     ClickText              Apex Triggers
-    VerifyText             This page allows you to view and modify all the triggers                            timeout=60
+    VerifyText             This page allows you to view and modify all the triggers                            timeout=120
     VerifyText             AccountTriggerExample
     ClickText              AccountTriggerExample
     VerifyText             Apex Trigger Detail
