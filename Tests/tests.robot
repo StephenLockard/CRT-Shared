@@ -16,8 +16,8 @@ Simple End To End Flow
     ClickText                   Talk to Sales       
           
 ##While we have the capability, we prefer not to use a traditional attribute or Xpath locator because they are difficult to read, write, and maintain.
-    #ClickElement                //*[contains(@class,"secondary-btn v2 w-button")]                                  #Nice comment from a cool good looking dude
-    #ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
+    ClickElement                //*[contains(@class,"secondary-btn v2 w-button")]                                  #Nice comment from a cool good looking dude
+    ClickElement                /html/body/section[1]/div/div/div[1]/div/div/a[3]
 
     
 
@@ -65,11 +65,13 @@ Targeting strategy
     #5 QVision
     #QVision.VerifyText        Learn More
 
+    
     #While we prefer not to use traditional locators, they are a fallback option.
     #6 Attribute locator
     #VerifyElement                //*[contains(@class,"button-text-with-right-icon")]          #Friendly comment
     #7 Xpath locator
     #VerifyElement                /html/body/section[7]/div/div[2]/div/div[1]/div/div[14]/div/div[2]/a/div/div
+    #SetConfig                   ShadowDOM                   True
 Create a lead and account, convert a lead to an opportunity. 
     [Documentation]             This is an example of entering and converting a lead.
     [tags]                      Lead                        Account                     Opportunity
