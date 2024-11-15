@@ -59,7 +59,7 @@ Test Coral Cloud Agent with Native CRT Functionality
     ${positive_sentiment}=      Evaluate
     ...                         ${hasAvailability} and ${hasDescription} and (${hasLocation} or ${hasPrice} or ${hasCapacity})
 
-Test NLTK
+Test Custom Library
     #Assert positive sentiment
     ${sentiment_score}=         Analyze Sentiment           Yes, there is availability for that event! Would you like me to sign you up?
     Should Be True              ${sentiment_score} >= ${POSITIVE_THRESHOLD}
@@ -69,6 +69,7 @@ Test NLTK
     #Assert netural sentiment
     ${sentiment_score}=         Analyze Sentiment           The color gray.
     Should Be True              ${sentiment_score} > ${NEGATIVE_THRESHOLD} and ${sentiment_score} < ${POSITIVE_THRESHOLD}
+    ${result}=                  Classify Response           No, absolutely not, never.
 
 Test Coral Cloud Agent with Natural Language Toolkit 
     #Close and re-open browser to make sure we have a fresh AI chat instance
