@@ -1,6 +1,6 @@
 *** Settings ***
-Resource                        ../resources/common.robot
-Library                         ../resources/TextAnalysis.py
+Resource                        ../Resources/common.robot
+Library                         ../Resources/TextAnalysis.py
 Suite Setup                     Setup Browser
 Suite Teardown                  End suite
 
