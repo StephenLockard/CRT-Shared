@@ -2,9 +2,6 @@ import re
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-class SentimentAnalysis:
-    ROBOT_LIBRARY_SCOPE = 'GLOBAL'  # This helps Robot Framework manage the class instance
-
     def __init__(self):
         nltk.download('vader_lexicon', quiet=True)
         self.sia = SentimentIntensityAnalyzer()
@@ -21,15 +18,4 @@ class SentimentAnalysis:
         sentiment_score = self.sia.polarity_scores(text)['compound']
         return sentiment_score
 
-    def classify_response(self, text):
-        text = text.lower()
-        
-        for pattern in self.affirmative_patterns:
-            if re.search(pattern, text):
-                return "Affirmative"
-        
-        for pattern in self.negative_patterns:
-            if re.search(pattern, text):
-                return "Negative"
-        
-        return "Unclear"
+   
