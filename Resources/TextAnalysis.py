@@ -1,9 +1,10 @@
 import re
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
-from robot.api.deco import keyword
 
 class SentimentAnalysis:
+    ROBOT_LIBRARY_SCOPE = 'GLOBAL'  # This helps Robot Framework manage the class instance
+
     def __init__(self):
         nltk.download('vader_lexicon', quiet=True)
         self.sia = SentimentIntensityAnalyzer()
