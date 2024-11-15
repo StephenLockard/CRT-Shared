@@ -1,9 +1,8 @@
 import re
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
-from robot.api.deco import keyword library
 
-@library
+
 class TextAnalysis:
     def __init__(self):
         nltk.download('vader_lexicon', quiet=True)
@@ -17,11 +16,11 @@ class TextAnalysis:
             r'\bdisagree\b', r'\bdeny\b', r'\brefuse\b', r'\breject\b'
         ]
 
-    @keyword
+    
     def analyze_sentiment(self, text):
         sentiment_score = self.sia.polarity_scores(text)['compound']
         return sentiment_score
-    @keyword
+    
     def classify_response(self, text):
         text = text.lower()
         
