@@ -130,4 +130,3 @@ Test Coral Cloud Agent with Natural Language Toolkit
 Respond Affirmatively
     TypeText                    Type your message...        Yes, I would like more information about the event.
     HotKey                      Enter
-    Analyze Sentiment
