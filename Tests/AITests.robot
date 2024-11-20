@@ -71,7 +71,7 @@ Test Agentforce Actions
     Should Be True              ${sentiment_score} > ${NEGATIVE_THRESHOLD} and ${sentiment_score} < ${POSITIVE_THRESHOLD}
     ${result}=                  Classify Response           No, absolutely not, never.
 
-Testing Agentforce Output with Copado AI
+Test Agentforce Output with Copado AI
     #Close and re-open browser to make sure we have a fresh AI chat instance
     CloseBrowser
     Setup Browser
