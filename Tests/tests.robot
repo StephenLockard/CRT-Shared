@@ -104,7 +104,7 @@ Enable/Disable Triggers
     VerifyText             This page allows you to view and modify all the triggers                            timeout=120
     VerifyText             AccountTriggerExample
     ClickText              AccountTriggerExample
-    VerifyText             Apex Trigger Detail
+    VerifyText             Apex Trigger Detail                        timeout=120
     ClickText              Edit
     ClickCheckbox          is active                   on
     VerifyCheckboxValue    is active                   on
