@@ -7,6 +7,7 @@ Suite Teardown                  End suite
 *** Variables ***
 ${POSITIVE_THRESHOLD}           0.5
 ${NEGATIVE_THRESHOLD}           -0.05
+${messageText}
 
 *** Test Cases ***
 Test Agentforce Output for expected responses
@@ -26,13 +27,7 @@ Test Agentforce Output for expected responses
 
     AIChat                      I would like information on the full moon beach party experience. Please include the Title, Location, Price, and Capacity.
 
-    TypeText                    Type your message...        I would like information on the full moon beach party experience. Please include the Title, Location, Price, and Capacity.
-    HotKey                      Enter
-    Sleep                       20
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    ${messageText}=             Convert To Lowercase        ${messageText}
-
-    IF                          "information" in $message_lower and "?" in $message_lower
+    IF                          "information" in $messageText and "?" in $messageText
         Respond Affirmatively
     END
 
@@ -97,31 +92,12 @@ Test Agentforce Output with Copado AI
     Should Be Equal As Strings                              ${result}                   Affirmative
 
     #Continue conversation for demo purpose
-    TypeText                    Type your message...        Yes, I want to book this event, can you show me available sessions?
-    HotKey                      Enter
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-
-    TypeText                    Type your message...        Let's book the event on the 11th at 1:30pm please.
-    HotKey                      Enter
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-
-    TypeText                    Type your message...        Two guests.
-    HotKey                      Enter
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-
-    TypeText                    Type your message...        This was very unhelpful, I'm not sure I like you.
-    HotKey                      Enter
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+    AIChat                      Yes, I want to book this event, can you show me available sessions?
+    AIChat                      Let's book the event for two guests on the 11th at 1:30pm please.
+    AIChat                      This was very unhelpful, I don't like you.
 
     #Negative sentiment assertion
-    TypeText                    Type your message...        Do you offer jet-ski rentals? I want to have some loud fun!
-    HotKey                      Enter
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+    AiChat                      Do you offer jet-ski rentals? I want to have some loud fun!
 
     #Sentiment score not good here as the bot always ends with a helpful response
     #${sentiment_score}=        Analyze Sentiment           ${messageText}
@@ -133,9 +109,7 @@ Test Agentforce Output with Copado AI
 
     #Continue conversation for demo
     TypeText                    Type your message...        Okay
-    HotKey                      Enter
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+    AIChat
 
 
     #Neutral sentiment assertion
@@ -161,8 +135,6 @@ Respond Affirmatively
 AIChat
     [Arguments]                 ${message}
     TypeText                    Type your message...        ${message}
-    HotKey                      Enter
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+    AIChat
     ${messageText}=             Convert To Lowercase        ${messageText}
     Set Suite Variable          ${messageText}
