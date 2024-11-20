@@ -24,12 +24,13 @@ Test Agentforce Output for expected responses
     #TODO - clicking this button is tricky, there may or may not be an improvement
     ClickElement                xpath=//*[@id="embeddedMessagingConversationButton"]
 
+    AIChat                      I would like information on the full moon beach party experience. Please include the Title, Location, Price, and Capacity.
 
     TypeText                    Type your message...        I would like information on the full moon beach party experience. Please include the Title, Location, Price, and Capacity.
     HotKey                      Enter
     Sleep                       20
     ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    ${messageLower}=            Convert To Lowercase        ${messageText}
+    ${messageText}=             Convert To Lowercase        ${messageText}
 
     IF                          "information" in $message_lower and "?" in $message_lower
         Respond Affirmatively
@@ -37,21 +38,21 @@ Test Agentforce Output for expected responses
 
     # Check availability
     ${hasAvailability}=         Run Keyword And Return Status
-    ...                         Should Contain Any          ${messageLower}             available                open     slots    capacity
+    ...                         Should Contain Any          ${messageText}              available           open     slots    capacity
 
     # Check event description
-    @{eventKeywords}=           Create List                 full moon                   beach party              music    dance    bonfire
+    @{eventKeywords}=           Create List                 full moon                   beach party         music    dance    bonfire
     ${hasDescription}=          Run Keyword And Return Status
-    ...                         Should Contain Any          ${messageLower}             @{eventKeywords}
+    ...                         Should Contain Any          ${messageText}              @{eventKeywords}
 
     ${hasTitle}=                Run Keyword And Return Status
-    ...                         Evaluate                    any(phrase in """${messageLower}""" for phrase in ["full moon beach party", "beach party under full moon", "full moon party on the beach"])
+    ...                         Evaluate                    any(phrase in """ ${messageText}""" for phrase in ["full moon beach party", "beach party under full moon", "full moon party on the beach"])
     ${hasLocation}=             Run Keyword And Return Status
-    ...                         Evaluate                    any(phrase in """${messageLower}""" for phrase in ["location: beach", "venue: beach", "takes place on the beach", "held at the beach"])
+    ...                         Evaluate                    any(phrase in """ ${messageText}""" for phrase in ["location: beach", "venue: beach", "takes place on the beach", "held at the beach"])
     ${hasPrice}=                Run Keyword And Return Status
-    ...                         Evaluate                    any(phrase in """${messageLower}""" for phrase in ["price: usd 25.00", "$25", "ticket price is $25", "25 dollars per person"])
+    ...                         Evaluate                    any(phrase in """ ${messageText}""" for phrase in ["price: usd 25.00", "$25", "ticket price is $25", "25 dollars per person"])
     ${hasCapacity}=             Run Keyword And Return Status
-    ...                         Evaluate                    any(phrase in """${messageLower}""" for phrase in ["30 people", "up to 30 people", "maximum of 30 people", "capacity: 30", "limit of 30 attendees", "30 person capacity"])
+    ...                         Evaluate                    any(phrase in """ ${messageText}""" for phrase in ["30 people", "up to 30 people", "maximum of 30 people", "capacity: 30", "limit of 30 attendees", "30 person capacity"])
 
 
 
@@ -86,76 +87,82 @@ Test Agentforce Output with Copado AI
 
     ClickElement                xpath=//*[@id="embeddedMessagingConversationButton"]
 
-    TypeText                    Type your message...        Are there good nightlife options at this resort?
-    HotKey                      Enter
-    Sleep                       20
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    ${messageLower}=            Convert To Lowercase        ${messageText}
+    AIChat                      Are there good nightlife options at this resort?
     #Positive sentiment assertion
-    ${sentiment_score}=         Analyze Sentiment           ${messageLower}
+    ${sentiment_score}=         Analyze Sentiment           ${messageText}
     Should Be True              ${sentiment_score} >= ${POSITIVE_THRESHOLD}
     #Positive response classification
-    ${result}=                  Classify Response           ${messageLower}
+    ${result}=                  Classify Response           ${messageText}
     Log To Console              ${result}
     Should Be Equal As Strings                              ${result}                   Affirmative
 
     #Continue conversation for demo purpose
-    TypeText                    Type your message...        Yes, I want to book this event, can you show me available sessions? 
+    TypeText                    Type your message...        Yes, I want to book this event, can you show me available sessions?
     HotKey                      Enter
-    Sleep                       20
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    
-    TypeText                    Type your message...        Let's book the event on the 11th at 1:30pm please. 
-    HotKey                      Enter
-    Sleep                       20
+    Sleep                       12
     ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
 
-    TypeText                    Type your message...        Two guests. 
+    TypeText                    Type your message...        Let's book the event on the 11th at 1:30pm please.
     HotKey                      Enter
-    Sleep                       20
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]    
-
-    TypeText                    Type your message...        This was very unhelpful, I'm not sure I like you. 
-    HotKey                      Enter
-    Sleep                       20
+    Sleep                       12
     ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    
+
+    TypeText                    Type your message...        Two guests.
+    HotKey                      Enter
+    Sleep                       12
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+
+    TypeText                    Type your message...        This was very unhelpful, I'm not sure I like you.
+    HotKey                      Enter
+    Sleep                       12
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+
     #Negative sentiment assertion
     TypeText                    Type your message...        Do you offer jet-ski rentals? I want to have some loud fun!
     HotKey                      Enter
-    Sleep                       20
+    Sleep                       12
     ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    ${messageLower}=            Convert To Lowercase        ${messageText}
+
     #Sentiment score not good here as the bot always ends with a helpful response
-    #${sentiment_score}=         Analyze Sentiment           ${messageLower}
-    #Should Be True              ${sentiment_score} <= ${NEGATIVE_THRESHOLD}
+    #${sentiment_score}=        Analyze Sentiment           ${messageText}
+    #Should Be True             ${sentiment_score} <= ${NEGATIVE_THRESHOLD}
     #Negative response classification
-    ${result}=                  Classify Response           ${messageLower}
+    ${result}=                  Classify Response           ${messageText}
     Should Be Equal As Strings                              ${result}                   Negative
 
 
     #Continue conversation for demo
-    TypeText                    Type your message...        Okay 
+    TypeText                    Type your message...        Okay
     HotKey                      Enter
-    Sleep                       20
+    Sleep                       12
     ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
 
 
     #Neutral sentiment assertion
     TypeText                    Type your message...        What will be the average temperature this week at the resort?
     HotKey                      Enter
-    
-    Sleep                       20
+
+    Sleep                       12
     ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    ${messageLower}=            Convert To Lowercase        ${messageText}
+    ${messageText}=             Convert To Lowercase        ${messageText}
     #Sentiment score not good here as the bot always ends with a helpful response
-    #${sentiment_score}=         Analyze Sentiment           ${messageLower}
-    #Should Be True              ${sentiment_score} > ${NEGATIVE_THRESHOLD} and ${sentiment_score} < ${POSITIVE_THRESHOLD}
+    #${sentiment_score}=        Analyze Sentiment           ${messageText}
+    #Should Be True             ${sentiment_score} > ${NEGATIVE_THRESHOLD} and ${sentiment_score} < ${POSITIVE_THRESHOLD}
     #Unclear response classification
-    ${result}=                  Classify Response           ${messageLower}
+    ${result}=                  Classify Response           ${messageText}
     Should Be Equal As Strings                              ${result}                   Unclear
 
 *** Keywords ***
 Respond Affirmatively
     TypeText                    Type your message...        Yes, I would like more information about the event.
     HotKey                      Enter
+
+
+AIChat
+    [Arguments]                 ${message}
+    TypeText                    Type your message...        ${message}
+    HotKey                      Enter
+    Sleep                       12
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+    ${messageText}=             Convert To Lowercase        ${messageText}
+    Set Suite Variable          ${messageText}
