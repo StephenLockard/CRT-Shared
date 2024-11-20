@@ -24,7 +24,7 @@ Test Agentforce Output for expected responses
     VerifyText                  Welcome to Coral Cloud Resort, your ultimate tropical escape nestled in the heart of paradise.
     #TODO - clicking this button is tricky, there may or may not be an improvement
     ClickElement                xpath=//*[@id="embeddedMessagingConversationButton"]
-    Sleep                       6                       
+    Sleep                       12                       
     AIChat                      I would like information on the full moon beach party experience. Please include the Title, Location, Price, and Capacity.
 
     IF                          "information" in $messageText and "?" in $messageText
@@ -81,7 +81,7 @@ Test Agentforce Output with Copado AI
     Switchwindow                NEW
 
     ClickElement                xpath=//*[@id="embeddedMessagingConversationButton"]
-    Sleep                       6
+    Sleep                       12
     AIChat                      Are there good nightlife options at this resort?
     #Positive sentiment assertion
     ${sentiment_score}=         Analyze Sentiment           ${messageText}
