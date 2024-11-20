@@ -25,7 +25,7 @@ Test Agentforce Output for expected responses
     #TODO - clicking this button is tricky, there may or may not be an improvement
     ClickElement                xpath=//*[@id="embeddedMessagingConversationButton"]
 
-    AIChat                      I would like information on the full moon beach party experience. Please include the Title, Location, Price, and Capacity.
+    AIChat                      message=I would like information on the full moon beach party experience. Please include the Title, Location, Price, and Capacity.
 
     IF                          "information" in $messageText and "?" in $messageText
         Respond Affirmatively
@@ -130,6 +130,6 @@ Respond Affirmatively
 AIChat
     [Arguments]                 ${message}
     TypeText                    Type your message...        ${message}
-    AIChat
+    HotKey                      Enter
     ${messageText}=             Convert To Lowercase        ${messageText}
     Set Suite Variable          ${messageText}
