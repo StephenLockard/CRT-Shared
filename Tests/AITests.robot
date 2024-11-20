@@ -9,7 +9,7 @@ ${POSITIVE_THRESHOLD}           0.5
 ${NEGATIVE_THRESHOLD}           -0.05
 
 *** Test Cases ***
-Testing Agentforce Output for expected responses
+Test Agentforce Output for expected responses
     Login
     #TODO - close all tabs in more robust manner
     Sleep                       3
