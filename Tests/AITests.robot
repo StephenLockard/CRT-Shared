@@ -99,6 +99,27 @@ Test Agentforce Output with Copado AI
     Log To Console              ${result}
     Should Be Equal As Strings                              ${result}                   Affirmative
 
+    #Continue conversation for demo purpose
+    TypeText                    Type your message...        Yes, I want to book this event, can you show me available sessions? 
+    HotKey                      Enter
+    Sleep                       20
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+    
+    TypeText                    Type your message...        Let's book the event on the 11th at 1:30pm please. 
+    HotKey                      Enter
+    Sleep                       20
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+
+    TypeText                    Type your message...        Two guests. 
+    HotKey                      Enter
+    Sleep                       20
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]    
+
+    TypeText                    Type your message...        This was very unhelpful, I'm not sure I like you. 
+    HotKey                      Enter
+    Sleep                       20
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+    
     #Negative sentiment assertion
     TypeText                    Type your message...        Do you offer jet-ski rentals? I want to have some loud fun!
     HotKey                      Enter
@@ -111,6 +132,14 @@ Test Agentforce Output with Copado AI
     #Negative response classification
     ${result}=                  Classify Response           ${messageLower}
     Should Be Equal As Strings                              ${result}                   Negative
+
+
+    #Continue conversation for demo
+    TypeText                    Type your message...        Okay 
+    HotKey                      Enter
+    Sleep                       20
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
+
 
     #Neutral sentiment assertion
     TypeText                    Type your message...        What will be the average temperature this week at the resort?
