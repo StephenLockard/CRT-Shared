@@ -10,6 +10,7 @@ ${sampleApex}              System.Debug('${message}');
 *** Test Cases ***
 Update Remote Site Settings
     [Tags]                 Deployment Automation
+    SetConfig              DefaultTimeout    60s
     Login
     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
     TypeText               Quick Find                  Remote Site Settings        delay=2
