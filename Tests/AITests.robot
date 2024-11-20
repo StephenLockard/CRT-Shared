@@ -108,12 +108,12 @@ Test Agentforce Output with Copado AI
 
 
     #Continue conversation for demo
-    TypeText                    Type your message...        Okay
-    AIChat
+    AIChat                      Okay
+
 
 
     #Neutral sentiment assertion
-    AiChat                       What will be the average temperature this week at the resort?
+    AiChat                      What will be the average temperature this week at the resort?
     #Sentiment score not good here as the bot always ends with a helpful response
     #${sentiment_score}=        Analyze Sentiment           ${messageText}
     #Should Be True             ${sentiment_score} > ${NEGATIVE_THRESHOLD} and ${sentiment_score} < ${POSITIVE_THRESHOLD}
