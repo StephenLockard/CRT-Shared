@@ -113,12 +113,7 @@ Test Agentforce Output with Copado AI
 
 
     #Neutral sentiment assertion
-    TypeText                    Type your message...        What will be the average temperature this week at the resort?
-    HotKey                      Enter
-
-    Sleep                       12
-    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
-    ${messageText}=             Convert To Lowercase        ${messageText}
+    AiChat                       What will be the average temperature this week at the resort?
     #Sentiment score not good here as the bot always ends with a helpful response
     #${sentiment_score}=        Analyze Sentiment           ${messageText}
     #Should Be True             ${sentiment_score} > ${NEGATIVE_THRESHOLD} and ${sentiment_score} < ${POSITIVE_THRESHOLD}
