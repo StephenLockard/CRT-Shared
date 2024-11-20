@@ -9,7 +9,7 @@ ${POSITIVE_THRESHOLD}           0.5
 ${NEGATIVE_THRESHOLD}           -0.05
 
 *** Test Cases ***
-Test Coral Cloud Agent with Native CRT Functionality
+Testing Agentforce Output for expected responses
     Login
     #TODO - close all tabs in more robust manner
     Sleep                       3
@@ -59,7 +59,7 @@ Test Coral Cloud Agent with Native CRT Functionality
     ${positive_sentiment}=      Evaluate
     ...                         ${hasAvailability} and ${hasDescription} and (${hasLocation} or ${hasPrice} or ${hasCapacity})
 
-Test Custom Library
+Test Agentforce Actions 
     #Assert positive sentiment
     ${sentiment_score}=         Analyze Sentiment           Yes, there is availability for that event! Would you like me to sign you up?
     Should Be True              ${sentiment_score} >= ${POSITIVE_THRESHOLD}
@@ -71,7 +71,7 @@ Test Custom Library
     Should Be True              ${sentiment_score} > ${NEGATIVE_THRESHOLD} and ${sentiment_score} < ${POSITIVE_THRESHOLD}
     ${result}=                  Classify Response           No, absolutely not, never.
 
-Test Coral Cloud Agent with Natural Language Toolkit 
+Testing Agentforce Output with Copado AI
     #Close and re-open browser to make sure we have a fresh AI chat instance
     CloseBrowser
     Setup Browser
