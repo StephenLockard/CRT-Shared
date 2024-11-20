@@ -81,7 +81,7 @@ Test Agentforce Output with Copado AI
     Switchwindow                NEW
 
     ClickElement                xpath=//*[@id="embeddedMessagingConversationButton"]
-    Sleep                       12
+    Sleep                       6
     AIChat                      Are there good nightlife options at this resort?
     #Positive sentiment assertion
     ${sentiment_score}=         Analyze Sentiment           ${messageText}
