@@ -131,5 +131,6 @@ AIChat
     [Arguments]                 ${message}
     TypeText                    Type your message...        ${message}
     HotKey                      Enter
+    ${messageText}=             GetText                     (//div[contains(@class, 'slds-chat-message__text_inbound')])[last()]
     ${messageText}=             Convert To Lowercase        ${messageText}
     Set Suite Variable          ${messageText}
