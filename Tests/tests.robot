@@ -154,34 +154,36 @@ Enable/Disable Workflow Rules
 Activate/Deactivate Process Builder
     [Tags]                 Deployment Automation
     Home
-    GoTo                   ${login_url}lightning/setup/SetupOneHome/home
-    TypeText               Quick Find                  Process Builder
-    VerifyText             Process Builder
-    ClickText              Process Builder
-    VerifyText             My Processes
-    ${success}=    Set Variable    ${FALSE}
-    FOR    ${i}    IN RANGE    3
-        ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
-        ${is_expanded}=                   IsText       Version 1: User Story Commit outdates latest
-        Exit For Loop If    ${is_expanded}
-        Sleep    3
-    END
-    Run Keyword If    not ${is_expanded}    Fail    Failed to expand "Show all versions" after 3 attempts
-    VerifyText             Deactivate                  anchor=Version 1: User Story Commit outdates latest
-    ClickText              Deactivate                  anchor=Version 1: User Story Commit outdates latest
-    VerifyText             Are you sure you want to deactivate this version?
-    ClickText              Confirm
-    ${success}=    Set Variable    ${FALSE}
-    FOR    ${i}    IN RANGE    3
-        ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
-        ${is_expanded}=                   IsText       Version 1: User Story Commit outdates latest
-        Exit For Loop If    ${is_expanded}
-        Sleep    3
-    END
-    VerifyText             Activate                    anchor=Version 1: User Story Commit outdates latest
-    ClickText              Activate                    anchor=Version 1: User Story Commit outdates latest
-    VerifyText             Activating this process automatically deactivates any other active version.
-    ClickText              Confirm
+    ##TODO: Process Builder has been deprecated
+    
+    # GoTo                   ${login_url}lightning/setup/SetupOneHome/home
+    # TypeText               Quick Find                  Process Builder
+    # VerifyText             Process Builder
+    # ClickText              Process Builder
+    # VerifyText             My Processes
+    # ${success}=    Set Variable    ${FALSE}
+    # FOR    ${i}    IN RANGE    3
+    #     ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+    #     ${is_expanded}=                   IsText       Version 1: User Story Commit outdates latest
+    #     Exit For Loop If    ${is_expanded}
+    #     Sleep    3
+    # END
+    # Run Keyword If    not ${is_expanded}    Fail    Failed to expand "Show all versions" after 3 attempts
+    # VerifyText             Deactivate                  anchor=Version 1: User Story Commit outdates latest
+    # ClickText              Deactivate                  anchor=Version 1: User Story Commit outdates latest
+    # VerifyText             Are you sure you want to deactivate this version?
+    # ClickText              Confirm
+    # ${success}=    Set Variable    ${FALSE}
+    # FOR    ${i}    IN RANGE    3
+    #     ClickText    Show all versions    anchor=User Story Commit outdates latest Validation
+    #     ${is_expanded}=                   IsText       Version 1: User Story Commit outdates latest
+    #     Exit For Loop If    ${is_expanded}
+    #     Sleep    3
+    # END
+    # VerifyText             Activate                    anchor=Version 1: User Story Commit outdates latest
+    # ClickText              Activate                    anchor=Version 1: User Story Commit outdates latest
+    # VerifyText             Activating this process automatically deactivates any other active version.
+    # ClickText              Confirm
 
 
 #TODO
