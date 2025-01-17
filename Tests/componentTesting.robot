@@ -52,7 +52,7 @@ Step B Create New Lead
 
 Step C Validate Lead
     [Documentation]             Navigate to stored lead URL and verify details
-    [Arguments]                 ${lead_Url}=
+    [Arguments]                 ${lead_Url}=https://slockard-dev-ed.lightning.force.com/lightning/r/Lead/00Q7Q00000FtYjdUAF/view
     GoTo                        ${lead_Url}
     ClickText                   Details
     VerifyField                 Company    Copado
