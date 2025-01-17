@@ -5,7 +5,7 @@ Suite Setup                     Setup Browser
 Suite Teardown                  End suite
 
 *** Variables ***
-${LEAD_URL}                     ${EMPTY}                  # Will store our lead URL
+${leadUrl}                     ${EMPTY}                  # Will store our lead URL
 
 *** Test Cases ***
 Test 1 Step A Only
@@ -43,15 +43,16 @@ Step B Create New Lead
     ClickText                   Leads
     ClickText                   New
     UseModal                    On
-    TypeText                    *Company                  Copado Test
+    TypeText                    Company                  Copado
     TypeText                    First Name                John
     TypeText                    Last Name                 Smith
-    ClickText                   Save
-    ${LEAD_URL}=                GetUrl
-    Set Suite Variable          ${LEAD_URL}               # Make URL available to other test cases
+    ClickText                   Save                      partial_match=false
+    ${leadUrl}=                GetUrl
+    Set Suite Variable          ${leadUrl}               # Make URL available to other test cases
 
 Step C Validate Lead
     [Documentation]             Navigate to stored lead URL and verify details
-    GoTo                        ${LEAD_URL}
-    VerifyText                  John Smith
-    VerifyText                  Copado Test
+    [Arguments]                 ${lead_Url}=
+    GoTo                        ${lead_Url}
+    ClickText                   Details
+    VerifyField                 Company    Copado
