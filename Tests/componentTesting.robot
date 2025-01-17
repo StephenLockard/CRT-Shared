@@ -14,12 +14,11 @@ Test 1 Step A Only
 
 Test 2 Steps A,B
     [Documentation]             Shows creating a lead and storing URL
-    Step A Login and Launch App
+    Step A Login and Verify Dashboard
     Step B Create New Lead
 
 Test 3 Steps B,C
-    [Documentation]             Shows validation of created lead
-    Step A Login and Launch App                           # Required setup
+    [Documentation]             Shows validation of created lead                        
     Step B Create New Lead
     Step C Validate Lead
 
@@ -35,9 +34,12 @@ Step A Login and Launch App
     [Documentation]             Login to Salesforce and launch Sales app
     Home
     LaunchApp                   Sales
+    VerifyText                  Quarterly Performance
 
 Step B Create New Lead
     [Documentation]             Create a new lead and store its URL
+    Home
+    LaunchApp                   Sales
     ClickText                   Leads
     ClickText                   New
     UseModal                    On
