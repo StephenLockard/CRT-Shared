@@ -12,15 +12,15 @@ Test 1 Step A Only
     [Documentation]             Shows login and app launch
     Step A Login and Launch App
 
-Test 2 Steps A,B
-    [Documentation]             Shows creating a lead and storing URL
-    Step A Login and Verify Dashboard
-    Step B Create New Lead
+# Test 2 Steps A,B
+#     [Documentation]             Shows creating a lead and storing URL
+#     Step A Login and Verify Dashboard
+#     Step B Create New Lead
 
-Test 3 Steps B,C
-    [Documentation]             Shows validation of created lead                        
-    Step B Create New Lead
-    Step C Validate Lead
+# Test 3 Steps B,C
+#     [Documentation]             Shows validation of created lead                        
+#     Step B Create New Lead
+#     Step C Validate Lead
 
 Complete Regression Test Bed
     [Documentation]             Shows optimized flow of all steps
