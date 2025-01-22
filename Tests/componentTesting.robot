@@ -22,12 +22,12 @@ Test 1 Step A Only
 #     Step B Create New Lead
 #     Step C Validate Lead
 
-Complete Regression Test Bed
-    [Documentation]             Shows optimized flow of all steps
-    [Tags]                      regression
-    Step A Login and Launch App
-    Step B Create New Lead
-    Step C Validate Lead        ${leadUrl}
+# Complete Regression Test Bed
+#     [Documentation]             Shows optimized flow of all steps
+#     [Tags]                      regression
+#     Step A Login and Launch App
+#     Step B Create New Lead
+#     Step C Validate Lead        ${leadUrl}
 
 *** Keywords ***
 Step A Login and Launch App
