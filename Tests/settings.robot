@@ -1,6 +1,6 @@
 *** Settings ***
 *** Variables ***
-
+${oppUrl}                      https://slockard-dev-ed.lightning.force.com/lightning/r/Opportunity/0067Q00000QmD1IQAV/view
 *** Keywords ***
 # Example of custom keyword with robot fw syntax
 VerifyStage
