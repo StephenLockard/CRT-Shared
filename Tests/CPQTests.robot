@@ -1,5 +1,6 @@
 *** Settings ***
 Resource                  ../Common/common.robot
+Resource                  settings.robot
 Library                   QVision
 Suite Setup               Setup Browser
 Suite Teardown            End suite
@@ -73,9 +74,9 @@ Preview & Validate PDF Document
     ClickText             Show more actions           timeout=60
     VerifyText            Preview Document
     HotKey                pagedown
-    ClickUntil            Document Options             Preview Document
+    ClickUntil            Document Options            Preview Document
     VerifyText            Preview                     anchor=Cancel
-    ClickText             Preview                     anchor=Cancel               
+    ClickText             Preview                     anchor=Cancel
     Sleep                 15
     VerifyRow             Net 30                      row_text=mkohler@copado.com
     VerifyRow             USD 120,000.00              row_text=TOTAL
@@ -103,14 +104,14 @@ Delete CPQ Quote Data
     ClickText             ${quoteID}
     ClickText             Show more actions
     VerifyText            Delete
-    ClickText             Delete                      
+    ClickText             Delete
     VerifyText            Are you sure you want to delete this Quote?
-    ClickText             Delete                      
+    ClickText             Delete
     VerifyText            was deleted
 
     ClickText             Opportunities               anchor=Accounts             delay=2
     ClickText             Robotic Testing             delay=2
-    ClickText             Products                    partial_match=true          anchor=Related        delay=2
+    ClickText             Products                    partial_match=true          anchor=Related          delay=2
 
     ClickText             Google Cloud Platform       partial_match=false
     VerifyText            Robotic Testing Google Cloud Platform
