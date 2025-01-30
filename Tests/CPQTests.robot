@@ -11,7 +11,6 @@ Create CPQ Quote
     #Navigate to home page, conditionally login, launch the CPQ app and load our opportunity.
     AppState              Home
     LaunchApp             Salesforce CPQ
-    ClickText             Opportunities
     GoTo                  ${oppUrl}
 
     #Create a quote for the opportunity
