@@ -20,7 +20,7 @@ Create CPQ Quote
     VerifyText            Create Quote
     ${date}=              Get Current Date            result_format=%b %d, %Y
     Set Suite Variable    ${date}
-    TypeText              Quote Start Date            ${date}
+    TypeText              Quote Start Date            ${date}    delay=3
     TypeText              Contract Length (months)    12
     ClickText             Next
     UseModal              Off
