@@ -8,8 +8,11 @@ Suite Teardown            End suite
 
 *** Test Cases ***
 Create CPQ Quote  
+    #Test suite specific configuration
+    SetConfig             DefaultTimeout              60s
+    SetConfig             Delay                       0.3
     #Navigate to home page, conditionally login, launch the CPQ app and load our opportunity.
-    AppState              Home
+    Home
     LaunchApp             Salesforce CPQ
     GoTo                  ${oppUrl}
 
@@ -20,7 +23,7 @@ Create CPQ Quote
     VerifyText            Create Quote
     ${date}=              Get Current Date            result_format=%b %d, %Y
     Set Suite Variable    ${date}                     delay=3
-    TypeText              Quote Start Date            ${date}    delay=3
+    TypeText              Quote Start Date            ${date}                     delay=3
     TypeText              Contract Length (months)    12
     ClickText             Next
     UseModal              Off
