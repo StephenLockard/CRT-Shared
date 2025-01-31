@@ -59,6 +59,10 @@ Use developer console to Execute Anonymous Apex
     CloseWindow
 
 Execute Apex from File
+    [Documentation]    This test case executes Apex code from a .apex file. 
+    ...                We pass the ExecuteApex keyword the file directory with the flag of is_file=true.
+    ...                Finally, the results can be returned directly to the ${results} variable.
+    ...                This method requires API authentication using the Authenticate keyword. 
     Home
     Authenticate           ${consumer_key}             ${consumer_secret}          ${username}                 ${password}
     ${results}=            ExecuteApex                 ${CURDIR}/sampleApex.apex                               is_file=True
