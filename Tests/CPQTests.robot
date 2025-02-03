@@ -18,8 +18,8 @@ Create CPQ Quote
     ClickText             Create Quote
     UseModal              on
     VerifyText            Create Quote
-    ${today}=             Get Current Date            result_format=%b %d, %Y
-    ${date}=              Add Time To Date            ${today}                    30 days
+    ${today}=             Get Current Date            
+    ${date}=              Add Time To Date            ${today}                    30 days    result_format=%b %d, %Y
     Set Suite Variable    ${date}
     ClickText             Quote Start Date            # First click to focus
     # Clear existing value
@@ -37,7 +37,7 @@ Edit CPQ Quote
     ${number}=            Get Regexp Matches          ${fullText}                 Q-(\\d+)                    1
     ${quoteID}=           Set Variable                Q-${number}[0]
     Set Suite Variable    ${quoteID}
-    ClickText             ${quoteID}
+    ClickText             ${quoteID}                  delay=2
 
     #Verify quote details
     VerifyField           Quote Number                ${quoteID}
