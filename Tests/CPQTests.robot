@@ -113,8 +113,7 @@ Delete CPQ Quote Data
     ClickText             Delete
     VerifyText            was deleted
 
-    ClickText             Opportunities               anchor=Accounts             delay=2
-    ClickText             Robotic Testing             delay=2
+    GoTo                  ${oppUrl}                   delay=2
     ClickText             Products                    partial_match=true          anchor=Related              delay=2
 
     ClickText             Google Cloud Platform       partial_match=false
