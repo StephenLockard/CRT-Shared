@@ -18,13 +18,14 @@ Create CPQ Quote
     ClickText             Create Quote
     UseModal              on
     VerifyText            Create Quote
-    ${date}=              Get Current Date            result_format=%b %d, %Y
-    Set Suite Variable    ${date}                     
-    ClickText    Quote Start Date    # First click to focus
+    ${today}=             Get Current Date            result_format=%b %d, %Y
+    ${date}=              Add Time To Date            ${today}                    30 days
+    Set Suite Variable    ${date}
+    ClickText             Quote Start Date            # First click to focus
     # Clear existing value
-    TypeText    Quote Start Date    ${EMPTY}    # Clear field
-    TypeText    Quote Start Date    ${EMPTY}    # Just in case Salesforce is slow
-    TypeText              Quote Start Date            ${date}      
+    TypeText              Quote Start Date            ${EMPTY}                    # Clear field
+    TypeText              Quote Start Date            ${EMPTY}                    # Just in case Salesforce is slow
+    TypeText              Quote Start Date            ${date}
     TypeText              Contract Length (months)    12
     ClickText             Next
     UseModal              Off
@@ -33,7 +34,7 @@ Edit CPQ Quote
     #Capture Quote Text from UI
     ${fullText}=          GetText                     Q-
     #Use RegExp to clean up value
-    ${number}=            Get Regexp Matches          ${fullText}                 Q-(\\d+)                1
+    ${number}=            Get Regexp Matches          ${fullText}                 Q-(\\d+)                    1
     ${quoteID}=           Set Variable                Q-${number}[0]
     Set Suite Variable    ${quoteID}
     ClickText             ${quoteID}
@@ -52,7 +53,7 @@ Edit CPQ Quote
 
     #Capture and compare start date and subscription term
     ${startDate}=         GetInputValue               Start Date
-    ${convertedDate}=     Convert Date                ${startDate}                date_format=%m/%d/%Y    result_format=%b %d, %Y
+    ${convertedDate}=     Convert Date                ${startDate}                date_format=%m/%d/%Y        result_format=%b %d, %Y
     Should Be Equal       ${convertedDate}            ${date}
     ${subTerm}=           GetInputValue               Subscription Term
     Should Be Equal       ${subTerm}                  12
@@ -69,7 +70,7 @@ Edit CPQ Quote
     ClickItem             Reconfigure Line            #engage icons with associative text
     ClickText             Cancel
 
-    ClickUntil            Create New Product Request                              Save                    anchor=Cancel
+    ClickUntil            Create New Product Request                              Save                        anchor=Cancel
 
 Preview & Validate PDF Document
     #Open document preview
@@ -114,7 +115,7 @@ Delete CPQ Quote Data
 
     ClickText             Opportunities               anchor=Accounts             delay=2
     ClickText             Robotic Testing             delay=2
-    ClickText             Products                    partial_match=true          anchor=Related          delay=2
+    ClickText             Products                    partial_match=true          anchor=Related              delay=2
 
     ClickText             Google Cloud Platform       partial_match=false
     VerifyText            Robotic Testing Google Cloud Platform
