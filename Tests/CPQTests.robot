@@ -105,34 +105,45 @@ Delete CPQ Quote Data
     LaunchApp             Salesforce CPQ
     ClickText             Quotes
     
-    # Check if quote exists before attempting deletion
-    ${quote_exists}=      Run Keyword And Return Status    VerifyText    ${quoteID}    timeout=5
-    Run Keyword If        ${quote_exists}    Delete Quote
-
+    # Check for any quotes and delete them
+    ${quotes_exist}=      IsText    Q-    timeout=5
+    Run Keyword If        ${quotes_exist}    Delete All Quotes
+    
     GoTo                  ${oppUrl}    delay=2
     
-    # Check and delete products only if they exist
-    ${products_tab_exists}=    Run Keyword And Return Status    ClickText    Products    partial_match=true    anchor=Related    timeout=5
-    Run Keyword If    ${products_tab_exists}    Delete Products
+    # Check if Products tab exists before attempting to delete products
+    ${products_tab_exists}=    IsText    Products    timeout=5    anchor=Related
+    Run Keyword If    ${products_tab_exists}    Delete All Products
     
     # Final verification
     GoTo                  ${oppUrl}
     ClickText             Details
-    VerifyNoText          ${quoteID}
+    VerifyNoText          Q-
     VerifyNoText          Google Cloud Platform
     VerifyNoText          BigQuery
 
 *** Keywords ***
-Delete Quote
-    ClickText             ${quoteID}
-    ClickText             Show more actions
-    VerifyText            Delete
-    ClickText             Delete
-    VerifyText            Are you sure you want to delete this Quote?
-    ClickText             Delete
-    VerifyText            was deleted
+Delete All Quotes
+    ${quote_count}=    Get Element Count    xpath=//*[contains(text(), 'Q-')]
+    FOR    ${i}    IN RANGE    ${quote_count}
+        ${first_quote}=    GetText    Q-    # Gets the first quote number visible
+        Delete Single Quote    ${first_quote}
+        # Small delay to allow page to refresh
+        Sleep    3
+    END
 
-Delete Products
+Delete Single Quote
+    [Arguments]    ${quote_number}
+    ClickText             ${quote_number}
+    ClickText             Show more actions
+    ${delete_exists}=     Run Keyword And Return Status    VerifyText    Delete    timeout=5
+    Run Keyword If        ${delete_exists}    Run Keywords
+    ...    ClickText             Delete    AND
+    ...    VerifyText            Are you sure you want to delete this Quote?    AND
+    ...    ClickText             Delete    AND
+    ...    VerifyText            was deleted
+
+Delete All Products
     ClickText             Products    partial_match=true    anchor=Related    delay=2
     
     # Check and delete Google Cloud Platform
@@ -147,10 +158,11 @@ Delete Product
     [Arguments]    ${product_name}
     ClickText             ${product_name}
     VerifyText            Robotic Testing ${product_name}
-    ClickText             Delete
-    VerifyText            Are you sure you want to delete this opportunity product?
-    ClickText             Delete    anchor=Cancel
-    VerifyText            was deleted
-
+    ${delete_exists}=     Run Keyword And Return Status    VerifyText    Delete    timeout=5
+    Run Keyword If        ${delete_exists}    Run Keywords
+    ...    ClickText             Delete    AND
+    ...    VerifyText            Are you sure you want to delete this opportunity product?    AND
+    ...    ClickText             Delete    anchor=Cancel    AND
+    ...    VerifyText            was deleted
 
 
