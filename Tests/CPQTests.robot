@@ -124,7 +124,7 @@ Delete CPQ Quote Data
 
 *** Keywords ***
 Delete All Quotes
-    ${quote_count}=    Get Element Count    xpath=//*[contains(text(), 'Q-')]
+    ${quote_count}=    GetElementCount    //*[contains(text(),"Q-")]
     FOR    ${i}    IN RANGE    ${quote_count}
         ${first_quote}=    GetText    Q-    # Gets the first quote number visible
         Delete Single Quote    ${first_quote}
@@ -136,7 +136,7 @@ Delete Single Quote
     [Arguments]    ${quote_number}
     ClickText             ${quote_number}
     ClickText             Show more actions
-    ${delete_exists}=     Run Keyword And Return Status    VerifyText    Delete    timeout=5
+    ${delete_exists}=     IsText    Delete    timeout=5
     Run Keyword If        ${delete_exists}    Run Keywords
     ...    ClickText             Delete    AND
     ...    VerifyText            Are you sure you want to delete this Quote?    AND
@@ -147,18 +147,18 @@ Delete All Products
     ClickText             Products    partial_match=true    anchor=Related    delay=2
     
     # Check and delete Google Cloud Platform
-    ${gcp_exists}=        Run Keyword And Return Status    VerifyText    Google Cloud Platform    timeout=5
+    ${gcp_exists}=        IsText    Google Cloud Platform    timeout=5
     Run Keyword If        ${gcp_exists}    Delete Product    Google Cloud Platform
     
     # Check and delete BigQuery
-    ${bigquery_exists}=   Run Keyword And Return Status    VerifyText    BigQuery    timeout=5
+    ${bigquery_exists}=   IsText    BigQuery    timeout=5
     Run Keyword If        ${bigquery_exists}    Delete Product    BigQuery
 
 Delete Product
     [Arguments]    ${product_name}
     ClickText             ${product_name}
     VerifyText            Robotic Testing ${product_name}
-    ${delete_exists}=     Run Keyword And Return Status    VerifyText    Delete    timeout=5
+    ${delete_exists}=     IsText    Delete    timeout=5
     Run Keyword If        ${delete_exists}    Run Keywords
     ...    ClickText             Delete    AND
     ...    VerifyText            Are you sure you want to delete this opportunity product?    AND
