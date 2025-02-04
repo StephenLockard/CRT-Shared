@@ -104,7 +104,26 @@ Delete CPQ Quote Data
     Home
     LaunchApp             Salesforce CPQ
     ClickText             Quotes
-    VerifyText            ${quoteID}                  delay=3
+    
+    # Check if quote exists before attempting deletion
+    ${quote_exists}=      Run Keyword And Return Status    VerifyText    ${quoteID}    timeout=5
+    Run Keyword If        ${quote_exists}    Delete Quote
+
+    GoTo                  ${oppUrl}    delay=2
+    
+    # Check and delete products only if they exist
+    ${products_tab_exists}=    Run Keyword And Return Status    ClickText    Products    partial_match=true    anchor=Related    timeout=5
+    Run Keyword If    ${products_tab_exists}    Delete Products
+    
+    # Final verification
+    GoTo                  ${oppUrl}
+    ClickText             Details
+    VerifyNoText          ${quoteID}
+    VerifyNoText          Google Cloud Platform
+    VerifyNoText          BigQuery
+
+*** Keywords ***
+Delete Quote
     ClickText             ${quoteID}
     ClickText             Show more actions
     VerifyText            Delete
@@ -113,27 +132,25 @@ Delete CPQ Quote Data
     ClickText             Delete
     VerifyText            was deleted
 
-    GoTo                  ${oppUrl}                   delay=2
-    ClickText             Products                    partial_match=true          anchor=Related              delay=2
+Delete Products
+    ClickText             Products    partial_match=true    anchor=Related    delay=2
+    
+    # Check and delete Google Cloud Platform
+    ${gcp_exists}=        Run Keyword And Return Status    VerifyText    Google Cloud Platform    timeout=5
+    Run Keyword If        ${gcp_exists}    Delete Product    Google Cloud Platform
+    
+    # Check and delete BigQuery
+    ${bigquery_exists}=   Run Keyword And Return Status    VerifyText    BigQuery    timeout=5
+    Run Keyword If        ${bigquery_exists}    Delete Product    BigQuery
 
-    ClickText             Google Cloud Platform       partial_match=false
-    VerifyText            Robotic Testing Google Cloud Platform
+Delete Product
+    [Arguments]    ${product_name}
+    ClickText             ${product_name}
+    VerifyText            Robotic Testing ${product_name}
     ClickText             Delete
     VerifyText            Are you sure you want to delete this opportunity product?
-    ClickText             Delete                      anchor=Cancel
+    ClickText             Delete    anchor=Cancel
     VerifyText            was deleted
 
-    ClickText             BigQuery
-    VerifyText            Robotic Testing BigQuery
-    ClickText             Delete
-    VerifyText            Are you sure you want to delete this opportunity product?
-    ClickText             Delete                      anchor=Cancel
-    VerifyText            was deleted
-
-    GoTo                  ${oppUrl}
-    ClickText             Details
-    VerifyNoText          ${quoteID}
-    VerifyNoText          Google Cloud Platform
-    VerifyNoText          BigQuery
 
 
