@@ -88,7 +88,7 @@ Preview & Validate PDF Document
 
 Submit and Approve Opportunity 
     GoTo                       ${oppUrl}
-    ClickText                  ${quoteID}
+    ClickText                  ${quoteID}    delay=2
     VerifyField                Quote Number                ${quoteID}
     VerifyField                Currency                    USD - U.S. Dollar
     VerifyFIeld                Type                        Quote
