@@ -48,10 +48,10 @@ Recorder and Salesforce Guidance
     Home
 
 Targeting strategy              
-    GoTo                        https://www.copado.com/demo
+    GoTo                        https://www.copado.com/
     #TODO - Update this test case as the demo element no longer exists!!!
     
-    ScrollTo                    Demo the industry-leading DevOps platform to see how we empower any Salesforce user to create great software
+    ScrollTo                    Level up your Salesforce DevOps skills with our resource library.
 
     ### The Copado targeting strategy is a recommended order of preference for choosing element locators:\
     #1 First partial match
@@ -59,7 +59,7 @@ Targeting strategy
     #2 Exact match
     VerifyText                  Learn More                  partial_match=false
     #3 Text based anchor
-    VerifyText                  Learn More                  anchor=One Platform for All Your Tools
+    VerifyText                  Learn More                  anchor=Support and Documentation
     #4 Index
     VerifyText                  Learn More                  anchor=4
     #5 QVision
