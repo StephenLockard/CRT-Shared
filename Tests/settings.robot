@@ -36,9 +36,9 @@ VerifyNoAccounts
 DeleteData
     [Documentation]    RunBlock to remove all data until it doesn't exist anymore
     ClickText          ${accountName}
-    
 
-    ClickText    Show more actions    anchor=Book Appointment
+
+    ClickText          Show more actions           anchor=Book Appointment
     ClickText          Delete
     VerifyText         Are you sure you want to delete this account?
     ClickText          Delete                      2
@@ -51,7 +51,7 @@ Cleanup
     Sleep              3
     LaunchApp          Sales
     ClickText          Accounts
-    RunBlock           VerifyNoAccounts            timeout=180s             exp_handler=DeleteData
+    RunBlock           VerifyNoAccounts            timeout=180s                exp_handler=DeleteData
     Sleep              3
 
 Verify New Lead Form
@@ -59,10 +59,10 @@ Verify New Lead Form
     VerifyText         New Lead
 
 Fill Lead Information
-    TypeText           First Name    ${first}
-    TypeText           Last Name     ${last}
-    TypeText           Company       ${company}
-    ClickText          Save          partial_match=false
+    TypeText           First Name                  ${first}
+    TypeText           Last Name                   ${last}
+    TypeText           Company                     ${company}
+    ClickText          Save                        partial_match=false
     VerifyText         ${first} ${last}
     UseModal           Off
 
@@ -72,9 +72,9 @@ Verify Lead Created
 
 Attempt Incomplete Lead Save
     UseModal           On
-    TypeText           First Name    ${first}
-    TypeText           Last Name     ${last}
-    ClickText          Save          partial_match=false
+    TypeText           First Name                  ${first}
+    TypeText           Last Name                   ${last}
+    ClickText          Save                        partial_match=false
     UseModal           Off
 
 Verify Error Message
@@ -84,8 +84,8 @@ Verify Error Message
 Convert Lead
     ClickItem          Converted
     ClickText          Select Converted Status
-    TypeText           Account Name    ${accountName}
-    ClickText          Convert         partial_match=false
+    TypeText           Account Name                ${accountName}
+    ClickText          Convert                     partial_match=false
 
 Verify Conversion
     VerifyText         Your lead has been converted
@@ -101,11 +101,11 @@ Verify Opportunity Details
     ClickText          ${company}-
     ClickText          Details
     VerifyText         Leads
-    VerifyText         TEST ROBOT      anchor=2
-    VerifyText         TEST ROBOT      anchor=Stage
-    VerifyField        Probability (%)    10%
+    VerifyText         TEST ROBOT                  anchor=2
+    VerifyText         TEST ROBOT                  anchor=Stage
+    VerifyField        Probability (%)             10%
     ScrollTo           Created By
     ClickText          Edit Description
-    TypeText           Description    Test automation helps us rapidly deliver high quality releases!
+    TypeText           Description                 Test automation helps us rapidly deliver high quality releases!
     ClickText          Save
     VerifyText         App Launcher
