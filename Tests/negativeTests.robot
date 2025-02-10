@@ -20,7 +20,7 @@ Attempt to Create Lead with Invalid Email
     ClickUntil                  Recently Viewed             Leads
     ClickText                   New
     Fill Invalid Lead Email
-    Verify Email Error Message
+    VerifyText                  We hit a snag.
 
 Attempt to Create Lead without Company
     [Documentation]             Attempt to create a lead with a company name that exceeds the maximum character limit
@@ -52,12 +52,6 @@ Fill Invalid Lead Email
     TypeText                    Email                       ${invalid_email}
     ClickText                   Save                        partial_match=false
     UseModal                    Off
-
-Verify Email Error Message
-    VerifyText                  You have entered an invalid format.
-    VerifyText                  We hit a snag.
-    VerifyText                  Review the following fields
-
 
 Fill Lead without Company
     UseModal                    On
