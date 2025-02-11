@@ -43,6 +43,7 @@ DeleteData
     VerifyText         Are you sure you want to delete this account?
     ClickText          Delete                      2
     VerifyText         was deleted
+    Sleep              3
 
 Cleanup                   
     Home
