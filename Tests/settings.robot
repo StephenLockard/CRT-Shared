@@ -42,9 +42,7 @@ DeleteData
     ClickText          Delete
     VerifyText         Are you sure you want to delete this account?
     ClickText          Delete                      2
-    VerifyText         Undo
-    VerifyNoText       Undo
-    ClickText          Accounts                    partial_match=False
+    VerifyText         was deleted
 
 Cleanup                   
     Home
