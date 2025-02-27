@@ -143,7 +143,7 @@ Expected failure and Self Healing
     #To demonstrate Self Healing uncomment and run the line below.
     #VerifyText                 SPEAK TO SALES              timeout=5
 
-Service Console E2E
+Proton Mail Send
     GoTo                        https://account.proton.me/login
     VerifyText                  Email or Username
     TypeText                    Email or Username           slockardCopado@proton.me
@@ -159,7 +159,7 @@ Service Console E2E
     ClickText                   Delete draft
     VerifyText                  Are you sure you want to permanently delete this draft?
     ClickText                   Delete
-
+Proton Mail Verify Contents
     Home
 
 Verify Picklist Only Contains Proper Values
