@@ -18,7 +18,7 @@ Follow [this short video](https://drive.google.com/file/d/1WLTOacWnyJfnyIYqCwlX9
 If you have already configured your github access token in CRT you may go directly to [this project](https://robotic.copado.com/robots/25618/dashboard).
 
 
-For more information please reach out to a member of the CRT SE team on Slack or visit the  [CRT Resource Hub](https://docs.google.com/spreadsheets/d/1A1yALrnJx08qhN_QBDE9IvQvlujun6NyLI9v61Hoark/edit#gid=0)
+For more information please reach out to Stephen Lockard on Slack.
 
 ## Contributing
 
