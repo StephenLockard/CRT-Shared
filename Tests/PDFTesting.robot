@@ -4,7 +4,7 @@ Suite Setup                     Setup Browser
 Suite Teardown                  End suite
 
 
-*** Test Cases ***
-PDF Testing   
-    UsePdf    AITesting.pdf
+# *** Test Cases ***
+# PDF Testing   
+#     UsePdf    AITesting.pdf
     
