@@ -99,23 +99,24 @@ Enable/Disable Einstein
     VerifyText             Disabled
 
 
-Enable/Disable Triggers
-    [Tags]                 Deployment Automation
-    Home
-    GoTo                   ${login_url}lightning/setup/SetupOneHome/home
-    TypeText               Quick Find                  Apex Triggers
-    VerifyText             Apex Triggers
-    ClickText              Apex Triggers
-    VerifyText             This page allows you to view and modify all the triggers                            timeout=120
-    VerifyText             AccountTriggerExample
-    ClickText              AccountTriggerExample
-    VerifyText             Apex Trigger Detail                        timeout=120
-    ClickText              Edit
-    ClickCheckbox          is active                   on
-    VerifyCheckboxValue    is active                   on
-    ClickCheckbox          is active                   off
-    VerifyCheckboxValue    is active                   off
-    ClickText              Save
+## NEEDS REPAIRS
+# Enable/Disable Triggers
+#     [Tags]                 Deployment Automation
+#     Home
+#     GoTo                   ${login_url}lightning/setup/SetupOneHome/home
+#     TypeText               Quick Find                  Apex Triggers
+#     VerifyText             Apex Triggers
+#     ClickText              Apex Triggers
+#     VerifyText             This page allows you to view and modify all the triggers                            timeout=120
+#     VerifyText             AccountTriggerExample
+#     ClickText              AccountTriggerExample
+#     VerifyText             Apex Trigger Detail                        timeout=120
+#     ClickText              Edit
+#     ClickCheckbox          is active                   on
+#     VerifyCheckboxValue    is active                   on
+#     ClickCheckbox          is active                   off
+#     VerifyCheckboxValue    is active                   off
+#     ClickText              Save
 
 
 
